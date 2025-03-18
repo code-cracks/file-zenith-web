@@ -1,3 +1,10 @@
+import ThemeButton from '@/components/ThemeButton';
+
 export default function Home() {
-  return <div>Moment</div>;
+  return (
+    <div>
+      Moment
+      <ThemeButton />
+    </div>
+  );
 }

@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config = {
-  darkMode: ['class'], // 启用 class 触发的暗黑模式
+  darkMode: 'class', // 启用 class 触发的暗黑模式
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',

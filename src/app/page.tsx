@@ -1,3 +1,9 @@
+import TitleNav from '../components/TitleNav';
+
 export default function Home() {
-  return <div>Moment</div>;
+  return (
+    <>
+      <TitleNav></TitleNav>
+    </>
+  );
 }

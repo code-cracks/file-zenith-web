@@ -3,7 +3,7 @@ import ThemeButton from '@/components/ThemeButton';
 export default function Home() {
   return (
     <div>
-      Moment
+      file-zenith-web
       <ThemeButton />
     </div>
   );

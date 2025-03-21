@@ -28,6 +28,8 @@ jobs:
       - name: Build
         id: build
         continue-on-error: true
+        env:
+          NODE_ENV: production
         run: pnpm run build
 
       - name: Comment build failure
@@ -54,6 +56,8 @@ jobs:
           enable-pull-request-comment: false
           enable-commit-comment: false
           overwrites-pull-request-comment: true
+          alias: deploy-preview-${{ github.event.number }}
+          netlify-config-path: ''
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

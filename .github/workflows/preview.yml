@@ -44,54 +44,25 @@ jobs:
               body: '❌ Preview deployment failed!\n\nBuild step failed. Please check the workflow logs for more details.'
             })
 
-      - name: Create package.json for deployment
+      - name: Install Netlify CLI
         if: steps.build.outcome == 'success'
-        run: |
-          cat > .next/package.json << EOL
-          {
-            "name": "next-app",
-            "scripts": {
-              "start": "next start"
-            },
-            "dependencies": {
-              "next": "15.2.2",
-              "react": "^19.0.0",
-              "react-dom": "^19.0.0"
-            }
-          }
-          EOL
+        run: pnpm install -g netlify-cli
 
       - name: Deploy to Netlify
         id: deploy
         if: steps.build.outcome == 'success'
-        uses: nwtgck/actions-netlify@v2.0
-        with:
-          publish-dir: '.next'
-          production-branch: main
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy Preview for PR #${{ github.event.number }}'
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-          functions-dir: '.next/server'
-          builder: 'node'
-          node-version: '20'
-          edge-functions: true
-          overwrites-pull-request-comment: true
-          alias: deploy-preview-${{ github.event.number }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 10
+        run: |
+          DEPLOY_URL=$(netlify deploy --dir=.next --json --message="Deploy Preview for PR #${{ github.event.number }}" | jq -r '.deploy_url')
+          echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
 
       - name: Comment deploy result
         if: steps.build.outcome == 'success'
         uses: actions/github-script@v6
         with:
           script: |
-            const deployResult = ${{ steps.deploy.outputs.success }};
-            const deployUrl = '${{ steps.deploy.outputs.deploy-url }}';
+            const deployUrl = '${{ steps.deploy.outputs.deploy_url }}';
 
-            if (deployResult) {
+            if (deployUrl) {
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
@@ -106,3 +77,6 @@ jobs:
                 body: '❌ Preview deployment failed!\n\nDeploy step failed. Please check the workflow logs for more details.'
               });
             }
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

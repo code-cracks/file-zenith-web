@@ -1,0 +1,48 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.4.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        env:
+          NODE_ENV: production
+        run: pnpm run build
+
+      - name: Install Netlify CLI
+        if: steps.build.outcome == 'success'
+        run: npm install -g netlify-cli
+
+      - name: Deploy to Netlify
+        if: steps.build.outcome == 'success'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          netlify deploy \
+            --dir=.next \
+            --message='Deploy Preview for PR #${{ github.event.number }}' \
+            --alias=pr-${{ github.event.number }}

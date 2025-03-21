@@ -34,11 +34,15 @@ jobs:
 
       - name: Install Netlify CLI
         if: steps.build.outcome == 'success'
-        run: pnpm install -g netlify-cli
+        run: npm install -g netlify-cli
 
       - name: Deploy to Netlify
         if: steps.build.outcome == 'success'
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: netlify deploy --dir=.next --message="Deploy Preview for PR #${{ github.event.number }}"
+        run: |
+          netlify deploy \
+            --dir=.next \
+            --message='Deploy Preview for PR #${{ github.event.number }}' \
+            --alias=pr-${{ github.event.number }}

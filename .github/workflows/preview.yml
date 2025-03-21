@@ -1,0 +1,84 @@
+name: Preview Deployment
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9.4.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        id: build
+        continue-on-error: true
+        run: pnpm run build
+
+      - name: Comment build failure
+        if: steps.build.outcome == 'failure'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.name,
+              body: '❌ Preview deployment failed!\n\nBuild step failed. Please check the workflow logs for more details.'
+            })
+
+      - name: Deploy to Netlify
+        id: deploy
+        if: steps.build.outcome == 'success'
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: '.next'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy Preview for PR #${{ github.event.number }}'
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 10
+
+      - name: Comment deploy result
+        if: steps.build.outcome == 'success'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const deployResult = ${{ steps.deploy.outputs.success }};
+            const deployUrl = '${{ steps.deploy.outputs.deploy-url }}';
+
+            if (deployResult) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.name,
+                body: `✅ Preview deployment successful!\n\n🔗 Preview URL: ${deployUrl}\n\n预览部署已完成，请点击上方链接查看效果。`
+              });
+            } else {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.name,
+                body: '❌ Preview deployment failed!\n\nDeploy step failed. Please check the workflow logs for more details.'
+              });
+            }

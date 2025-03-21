@@ -44,6 +44,23 @@ jobs:
               body: '❌ Preview deployment failed!\n\nBuild step failed. Please check the workflow logs for more details.'
             })
 
+      - name: Create package.json for deployment
+        if: steps.build.outcome == 'success'
+        run: |
+          cat > .next/package.json << EOL
+          {
+            "name": "next-app",
+            "scripts": {
+              "start": "next start"
+            },
+            "dependencies": {
+              "next": "15.2.2",
+              "react": "^19.0.0",
+              "react-dom": "^19.0.0"
+            }
+          }
+          EOL
+
       - name: Deploy to Netlify
         id: deploy
         if: steps.build.outcome == 'success'
@@ -55,9 +72,12 @@ jobs:
           deploy-message: 'Deploy Preview for PR #${{ github.event.number }}'
           enable-pull-request-comment: false
           enable-commit-comment: false
+          functions-dir: '.next/server'
+          builder: 'node'
+          node-version: '20'
+          edge-functions: true
           overwrites-pull-request-comment: true
           alias: deploy-preview-${{ github.event.number }}
-          netlify-config-path: ''
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

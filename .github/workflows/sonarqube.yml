@@ -34,6 +34,20 @@ jobs:
       - name: Run Tests with Coverage
         run: pnpm test -- --coverage
 
+      - name: Check code structure
+        run: |
+          echo "Checking project structure:"
+          ls -la
+          echo "src directory:"
+          ls -la src || echo "src directory not found"
+          echo "tests directory:"
+          ls -la tests || echo "tests directory not found"
+          echo "coverage directory:"
+          ls -la coverage || echo "coverage directory not found"
+
+      - name: Debug SonarQube config
+        run: cat sonar-project.properties
+
       - name: SonarQube Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

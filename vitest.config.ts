@@ -20,13 +20,14 @@ export default defineConfig({
     ],
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      reportsDirectory: './tests/coverage',
+      reporter: ['text', 'json', 'html', 'lcov', 'cobertura'],
+      reportsDirectory: './coverage',
       exclude: ['**/node_modules/**', '**/dist/**', '**/tests/e2e/**', '**/.next/**'],
     },
-    reporters: ['default', 'html'],
+    reporters: ['default', 'html', 'junit'],
     outputFile: {
       html: './tests/unit/reports/index.html',
+      junit: './test-report.xml',
     },
   },
   resolve: {

@@ -48,7 +48,22 @@ jobs:
       - name: Debug SonarQube config
         run: cat sonar-project.properties
 
-      - name: SonarQube Scan
+      # 主分支扫描配置
+      - name: SonarQube Scan (main branch)
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=code-cracks_code-crack
+            -Dsonar.organization=code-cracks 
+            -Dsonar.branch.name=main
+
+      # PR扫描配置(禁用)
+      - name: SonarQube Scan (regular branch)
+        if: github.event_name == 'pull_request'
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,4 +72,6 @@ jobs:
           args: >
             -Dsonar.projectKey=code-cracks_code-crack
             -Dsonar.organization=code-cracks
-            -Dsonar.projectName=code-crack
+            -Dsonar.scm.provider=git
+            -Dsonar.sources=src
+            -Dsonar.branch.name=${{ github.head_ref || github.ref_name }}

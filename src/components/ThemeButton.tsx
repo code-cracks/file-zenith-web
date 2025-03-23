@@ -2,14 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-
-const themeMap = {
-  system: 'light',
-  light: 'dark',
-  dark: 'system',
-};
-
-type ThemeKey = keyof typeof themeMap;
+import { Moon, Sun } from 'lucide-react';
 
 function ThemeButton() {
   const [mounted, setMounted] = useState(false);
@@ -26,12 +19,17 @@ function ThemeButton() {
   }
 
   return (
-    <div className="p-8 space-y-4">
-      {/* 测试文案 */}
-      <button onClick={() => setTheme(themeMap[theme as ThemeKey])}>
-        {themeMap[theme as ThemeKey]}
-      </button>
-    </div>
+    <button
+      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="p-2 rounded-md focus:outline-none"
+      aria-label="Toggle theme"
+    >
+      {theme === 'dark' ? (
+        <Sun className="h-5 w-5 text-yellow-300" />
+      ) : (
+        <Moon className="h-5 w-5 text-gray-100" />
+      )}
+    </button>
   );
 }
 

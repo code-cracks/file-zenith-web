@@ -53,3 +53,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=code-cracks_code-crack
+            -Dsonar.organization=code-cracks
+            -Dsonar.projectName=code-crack

@@ -8,6 +8,10 @@
 
 # testing
 /coverage
+/tests/e2e/reports
+/tests/e2e/results
+/tests/unit/reports
+/tests/unit/coverage
 
 # next.js
 /.next/

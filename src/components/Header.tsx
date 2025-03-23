@@ -98,9 +98,10 @@ const Header = () => {
       >
         {/* Mobile Menu Panel */}
         <div
-          className={`fixed inset-y-0 right-0 w-72 bg-gray-900 shadow-xl transition-transform duration-300 ease-in-out ${
+          className={`fixed inset-y-0 right-0 z-50 w-full max-w-sm transform transition-transform duration-300 ease-in-out bg-background/95 backdrop-blur-sm shadow-xl ${
             isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
+          data-testid="mobile-menu"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full">

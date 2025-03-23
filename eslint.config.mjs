@@ -9,7 +9,18 @@ import { resolve } from 'path';
 
 export default [
   {
-    ignores: ['node_modules/**', '.next/**', './eslint.config.js', 'dist/**'],
+    ignores: [
+      'node_modules/**',
+      '.next/**',
+      './eslint.config.js',
+      'dist/**',
+      'tests/unit/coverage/**',
+      'tests/unit/reports/**',
+      'tests/coverage/**',
+      '**/*.js',
+      '.turbo/**',
+      'storybook-static/**',
+    ],
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],

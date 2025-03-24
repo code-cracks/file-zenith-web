@@ -114,7 +114,7 @@ const Header = () => {
                   <div key={index} className="border-b border-gray-800/50 last:border-b-0">
                     <button
                       onClick={() => toggleSection(index)}
-                      className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-200 hover:bg-white/5 cursor-pointer"
+                      className="flex items-center justify-between w-full px-4 py-3 text-sm font-medium text-gray-900 dark:text-white hover:bg-white/5 cursor-pointer"
                     >
                       <div className="flex items-center">
                         <section.icon className="w-4 h-4 mr-2" />
@@ -136,7 +136,7 @@ const Header = () => {
                           <Link
                             key={itemIndex}
                             href={item.href}
-                            className="flex items-center px-8 py-2.5 text-sm text-gray-400 hover:text-white hover:bg-white/5 cursor-pointer"
+                            className="flex items-center px-8 py-2.5 text-sm text-gray-900 dark:text-white hover:text-white hover:bg-white/5 cursor-pointer"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             {item.title}

@@ -10,7 +10,7 @@ export interface UploadPdfRef {
   removePdfFile: () => void;
 }
 interface UploadPdfProps {
-  onFileChange: (file: File) => void;
+  onFileChange: (file: File | null) => void;
 }
 
 const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, ref) => {
@@ -24,6 +24,7 @@ const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, re
 
   const removePdfFile = () => {
     setFile(null);
+    onFileChange(null);
   };
 
   useImperativeHandle(ref, () => ({

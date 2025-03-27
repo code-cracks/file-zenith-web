@@ -638,7 +638,7 @@ function ImageWatermarkTool({
 
               {/* 图片和水印预览 */}
               <div className="flex justify-center mb-4">
-                <div className="inline-block overflow-hidden bg-black border border-gray-300 dark:border-gray-700 max-w-full">
+                <div className="relative inline-block overflow-hidden bg-black border border-gray-300 dark:border-gray-700 max-w-full">
                   {isLoading ? (
                     <div
                       className="flex items-center justify-center"

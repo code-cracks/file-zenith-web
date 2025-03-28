@@ -59,6 +59,7 @@ function ImageWatermarkTool({
   const [error, setError] = useState<string | null>(null);
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [imageType, setImageType] = useState<string>('image/jpeg');
 
   // 图片尺寸管理
   const [imageSize, setImageSize] = useState<{ width: number; height: number }>({ width, height });
@@ -183,6 +184,7 @@ function ImageWatermarkTool({
     reader.onload = (e) => {
       const result = e.target?.result as string;
       setImageSrc(result);
+      setImageType(file.type);
       setIsLoading(false);
 
       if (onImageUpload) {
@@ -276,23 +278,26 @@ function ImageWatermarkTool({
         }
 
         // 导出图片并触发下载
-        canvas.toBlob((blob) => {
-          if (blob) {
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            const filename = generateFilename();
-            link.download = filename;
-            link.href = url;
-            link.click();
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              const url = URL.createObjectURL(blob);
+              const link = document.createElement('a');
+              const filename = generateFilename();
+              link.download = filename;
+              link.href = url;
+              link.click();
+              // 清理资源
+              setTimeout(() => URL.revokeObjectURL(url), 100);
+            } else {
+              setError('生成图片失败');
+            }
 
-            // 清理资源
-            setTimeout(() => URL.revokeObjectURL(url), 100);
-          } else {
-            setError('生成图片失败');
-          }
-
-          setIsDownloading(false);
-        }, 'image/png');
+            setIsDownloading(false);
+          },
+          imageType,
+          0.8,
+        );
       };
 
       img.onerror = () => {
@@ -439,7 +444,7 @@ function ImageWatermarkTool({
     const dateStr = date.toISOString().slice(0, 10).replace(/-/g, '');
     const timeStr = date.toTimeString().slice(0, 8).replace(/:/g, '');
 
-    return `watermarked-${dateStr}${timeStr}.png`;
+    return `watermarked-${dateStr}${timeStr}.${imageType.split('/')[1]}`;
   };
 
   // 渲染全屏水印

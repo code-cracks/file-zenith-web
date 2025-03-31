@@ -314,7 +314,7 @@ const GridCutPage = () => {
           <div className="py-4 md:py-6">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-                <div className="bg-gray-50 rounded-xl px-5 py-2.5 flex items-center gap-4 border-2 border-dashed w-full sm:w-auto border-gray-300">
+                <div className="rounded-xl px-5 py-2.5 flex items-center gap-4 border-2 border-dashed w-full sm:w-auto border-gray-300 dark:border-gray-700">
                   <span className="text-gray-400 font-medium min-w-[40px]">行数</span>
                   <div className="flex items-center gap-2 rounded-lg p-1 flex-1 sm:flex-none justify-center">
                     <button
@@ -335,7 +335,7 @@ const GridCutPage = () => {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-xl px-5 py-2.5 flex items-center gap-4 border-2 border-dashed w-full sm:w-auto border-gray-300">
+                <div className="rounded-xl px-5 py-2.5 flex items-center gap-4 border-2 border-dashed w-full sm:w-auto border-gray-300 dark:border-gray-700">
                   <span className="text-gray-400 font-medium min-w-[40px]">列数</span>
                   <div className="flex items-center gap-2 rounded-lg p-1 flex-1 sm:flex-none justify-center">
                     <button

@@ -369,14 +369,14 @@ const GridCutPage = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <button
-                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium shadow-lg shadow-blue-500/20 w-full sm:w-auto"
+                  className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-gray-100 rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2 font-medium shadow-lg shadow-blue-500/20 w-full sm:w-auto"
                   disabled={!image || isProcessing}
                   onClick={handleSplitImage}
                 >
                   {isProcessing ? '处理中...' : '切割图片'}
                 </button>
                 <button
-                  className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed font-medium shadow-lg shadow-red-500/20 w-full sm:w-auto"
+                  className="px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-gray-100 rounded-xl hover:from-red-600 hover:to-red-700 transition-all disabled:opacity-70 disabled:cursor-not-allowed font-medium shadow-lg shadow-red-500/20 w-full sm:w-auto"
                   onClick={() => {
                     setImage(null);
                     setSplitImages([]);

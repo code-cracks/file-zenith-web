@@ -29,6 +29,8 @@
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "gif.js": "^0.2.0",
+    "gifuct-js": "^2.1.2",
     "jszip": "^3.10.1",
     "lucide-react": "^0.479.0",
     "next": "15.2.2",

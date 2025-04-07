@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import GifBatchCompressor from './components/GifBatchCompressor';
+import GifBatchCompressor from './_components/GifBatchCompressor';
 
 const GifCompress = () => {
   return (

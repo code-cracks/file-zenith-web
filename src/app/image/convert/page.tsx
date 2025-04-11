@@ -6,10 +6,25 @@ import JSZip from 'jszip';
 
 // 支持的图片格式
 const SUPPORTED_FORMATS = [
-  { name: 'JPG', mimeType: 'image/jpeg', extension: '.jpg' },
-  { name: 'PNG', mimeType: 'image/png', extension: '.png' },
-  { name: 'WEBP', mimeType: 'image/webp', extension: '.webp' },
-  { name: 'BMP', mimeType: 'image/bmp', extension: '.bmp' },
+  {
+    name: 'JPG',
+    mimeType: 'image/jpeg',
+    extension: '.jpg',
+    tips: '适合照片，有损压缩，不支持透明背景',
+  },
+  {
+    name: 'PNG',
+    mimeType: 'image/png',
+    extension: '.png',
+    tips: '支持透明背景，无损压缩，文件较大',
+  },
+  {
+    name: 'WEBP',
+    mimeType: 'image/webp',
+    extension: '.webp',
+    tips: '现代格式，较小文件大小，支持透明和动画',
+  },
+  { name: 'BMP', mimeType: 'image/bmp', extension: '.bmp', tips: '无损格式，文件较大，不支持透明' },
 ];
 
 export default function ImageConvert() {
@@ -397,18 +412,12 @@ export default function ImageConvert() {
           <div>
             <h3 className="font-medium mb-2">格式特点：</h3>
             <ul className="list-disc pl-6 space-y-1">
-              <li>
-                <strong>JPG:</strong> 适合照片，有损压缩，不支持透明背景
-              </li>
-              <li>
-                <strong>PNG:</strong> 支持透明背景，无损压缩，文件较大
-              </li>
-              <li>
-                <strong>WebP:</strong> 现代格式，较小文件大小，支持透明和动画
-              </li>
-              <li>
-                <strong>BMP:</strong> 无损格式，文件较大，不支持透明
-              </li>
+              {SUPPORTED_FORMATS.map((format) => (
+                <li key={format.name}>
+                  <strong>{format.name}：</strong>
+                  {format.tips}
+                </li>
+              ))}
             </ul>
           </div>
           <p>

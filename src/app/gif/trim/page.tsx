@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import GifTrimmer from './components/GifTrimmer';
+import GifTrimmer from './_components/GifTrimmer';
 
 const GifTrim = () => {
   return (

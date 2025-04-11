@@ -19,7 +19,7 @@ const SUPPORTED_FORMATS = [
     tips: '支持透明背景，无损压缩，文件较大',
   },
   {
-    name: 'WEBP',
+    name: 'WebP',
     mimeType: 'image/webp',
     extension: '.webp',
     tips: '现代格式，较小文件大小，支持透明和动画',
@@ -34,6 +34,8 @@ export default function ImageConvert() {
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [output, setOutput] = useState<{ name: string; url: string }[]>([]);
+
+  const formatNameList = SUPPORTED_FORMATS.map((format) => format.name);
 
   // 处理文件上传
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -253,7 +255,7 @@ export default function ImageConvert() {
             <span className="text-gray-500">或拖拽文件到此区域</span>
           </div>
           <p className="text-sm text-gray-400">
-            支持 JPEG, PNG, WEBP, BMP 格式（单次最多20个文件）
+            支持 {formatNameList.join(', ')} 格式（单次最多20个文件）
           </p>
         </label>
       </div>
@@ -393,7 +395,13 @@ export default function ImageConvert() {
                   <p className="truncate max-w-[70%]" title={file.name}>
                     {file.name}
                   </p>
-                  <span className="text-sm text-gray-500">{selectedFormat.name}</span>
+                  <span className="text-sm text-gray-500">
+                    {
+                      SUPPORTED_FORMATS.find(
+                        (format) => format.extension === '.' + file.name.split('.').pop(),
+                      )?.name
+                    }
+                  </span>
                 </div>
               </div>
             ))}
@@ -408,7 +416,10 @@ export default function ImageConvert() {
           图片格式转换说明
         </h2>
         <div className="space-y-4">
-          <p>本工具支持将图片在JPG、PNG、WebP、GIF和BMP格式之间相互转换。</p>
+          <p>
+            本工具支持将图片在 {formatNameList.slice(0, -1).join('、')} 和{' '}
+            {formatNameList[formatNameList.length - 1]} 格式之间相互转换。
+          </p>
           <div>
             <h3 className="font-medium mb-2">格式特点：</h3>
             <ul className="list-disc pl-6 space-y-1">

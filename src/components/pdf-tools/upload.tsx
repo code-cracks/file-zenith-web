@@ -4,11 +4,13 @@ import { forwardRef, useImperativeHandle, useState } from 'react';
 import { File, Plus, X } from 'lucide-react';
 
 import { formatFileSize } from '@/utils/sizeComputer';
+import { usePdfCompression } from '@/hooks/usePdfCompression';
 
 export interface UploadPdfRef {
   file: File | null;
   pdfBuffer: ArrayBuffer | null;
   removePdfFile: () => void;
+  openCompressionDialog: () => void;
 }
 
 interface UploadPdfProps {
@@ -18,6 +20,7 @@ interface UploadPdfProps {
 const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, ref) => {
   const [file, setFile] = useState<File | null>(null);
   const [pdfBuffer, setPdfBuffer] = useState<ArrayBuffer | null>(null);
+  const { openDialog, dialog } = usePdfCompression();
 
   const uploadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -43,10 +46,17 @@ const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, re
     onFileChange(null, null);
   };
 
+  const openCompressionDialog = () => {
+    if (file && pdfBuffer) {
+      openDialog(pdfBuffer, file.name);
+    }
+  };
+
   useImperativeHandle(ref, () => ({
     file,
     pdfBuffer,
     removePdfFile,
+    openCompressionDialog,
   }));
 
   return (
@@ -94,6 +104,7 @@ const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, re
               <X className="size-5 text-gray-500" />
             </button>
           </div>
+          {dialog}
         </div>
       )}
     </div>

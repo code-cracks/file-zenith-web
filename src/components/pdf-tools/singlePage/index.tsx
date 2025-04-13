@@ -1,4 +1,4 @@
-import { FC, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
+import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 import { Page } from 'react-pdf';
 
 import PageToolbar from '../pageToolbar';
@@ -20,12 +20,13 @@ const ZOOM_STEP = 0.1; // 10% 缩放步长
 const MIN_SCALE = 0.5; // 最小缩放 50%
 const MAX_SCALE = 2.0; // 最大缩放 200%
 
-const SinglePage: FC<SinglePageProps> = forwardRef<SinglePageRef, SinglePageProps>(
+const SinglePage = forwardRef<SinglePageRef, SinglePageProps>(
   ({ index, className, width = 400 }, ref) => {
     const pageNumber = useMemo(() => index + 1, [index]);
     const [scale, setScale] = useState(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const containerRef = useRef<HTMLDivElement>(null);
+    const canvasRef = useRef<HTMLCanvasElement>(null);
     const isDragging = useRef(false);
     const lastPosition = useRef({ x: 0, y: 0 });
 
@@ -137,20 +138,51 @@ const SinglePage: FC<SinglePageProps> = forwardRef<SinglePageRef, SinglePageProp
       }
     }, []);
 
+    // 更新canvas缩放
+    const updateCanvasScale = (newScale: number) => {
+      if (canvasRef.current) {
+        canvasRef.current.style.transform = `scale(${newScale})`;
+      }
+    };
+
+    // 当scale变化时更新canvas
+    useEffect(() => {
+      updateCanvasScale(scale);
+    }, [scale]);
+
+    const editCanvas = (canvas: HTMLCanvasElement) => {
+      if (canvas) {
+        canvasRef.current = canvas;
+        canvas.style.imageRendering = 'high-quality';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.objectFit = 'contain';
+        canvas.style.transitionProperty = 'transform';
+        canvas.style.transitionTimingFunction = 'cubic-bezier(0.4, 0, 0.2, 1)';
+        canvas.style.transitionDuration = '150ms';
+        canvas.style.transform = `scale(${scale})`;
+        canvas.style.transformOrigin = 'center';
+      }
+    };
+
     // 导出图片
     const exportImage = (format: string) => {
-      const canvas = document.querySelector('.react-pdf__Page__canvas') as HTMLCanvasElement;
-
-      if (canvas) {
+      if (canvasRef.current) {
+        // 创建一个临时canvas来保存图片
         const tempCanvas = document.createElement('canvas');
-        tempCanvas.width = canvas.width;
-        tempCanvas.height = canvas.height;
+        const sourceCanvas = canvasRef.current;
 
+        // 设置临时canvas的尺寸
+        tempCanvas.width = sourceCanvas.width;
+        tempCanvas.height = sourceCanvas.height;
+
+        // 获取上下文并复制原始canvas的内容
         const ctx = tempCanvas.getContext('2d');
 
         if (ctx) {
-          ctx.drawImage(canvas, 0, 0);
+          ctx.drawImage(sourceCanvas, 0, 0);
 
+          // 创建下载链接
           const link = document.createElement('a');
           link.download = `page-${pageNumber}.${format}`;
           link.href = tempCanvas.toDataURL(`image/${format}`, format === 'jpeg' ? 0.8 : undefined);
@@ -204,6 +236,7 @@ const SinglePage: FC<SinglePageProps> = forwardRef<SinglePageRef, SinglePageProp
                 width={width}
                 renderAnnotationLayer={false}
                 renderTextLayer={false}
+                canvasRef={editCanvas}
                 className="transition-transform duration-200 ease-out"
               />
             </div>
@@ -219,9 +252,9 @@ const SinglePage: FC<SinglePageProps> = forwardRef<SinglePageRef, SinglePageProp
             />
           </div>
         </div>
-        <div className="w-full text-center shrink-0 text-xs italic overflow-hidden text-ellipsis whitespace-nowrap">
+        {/* <div className="w-full text-center shrink-0 text-xs italic overflow-hidden text-ellipsis whitespace-nowrap">
           {index + 1}
-        </div>
+        </div> */}
       </div>
     );
   },

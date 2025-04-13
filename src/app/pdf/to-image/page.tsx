@@ -2,9 +2,11 @@
 
 import { useRef, useState } from 'react';
 import { Document, pdfjs } from 'react-pdf';
+import { FileDown } from 'lucide-react';
 
 import UploadPdf, { type UploadPdfRef } from '@/components/pdf-tools/upload';
 import SinglePage from '@/components/pdf-tools/singlePage';
+import { usePdfCompression } from '@/hooks/usePdfCompression';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -18,11 +20,14 @@ const options = {
 const Pdf2Image = () => {
   const pdfUploaderRef = useRef<UploadPdfRef>(null);
   const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [pdfBuffer, setPdfBuffer] = useState<ArrayBuffer | null>(null);
   const [numPages, setNumPages] = useState<number | undefined>(undefined);
+  const { openDialog, dialog } = usePdfCompression();
 
-  const onFileChange = (file: File | null) => {
+  const onFileChange = (file: File | null, buffer: ArrayBuffer | null) => {
     console.log('onFileChange', file);
     setPdfFile(file);
+    setPdfBuffer(buffer);
   };
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
@@ -56,6 +61,16 @@ const Pdf2Image = () => {
             >
               缩小
             </button>
+            {pdfBuffer && (
+              <button
+                onClick={() => openDialog(pdfBuffer, pdfFile.name)}
+                className="px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors flex items-center gap-2"
+                title="压缩PDF"
+              >
+                <FileDown className="size-5" />
+                压缩
+              </button>
+            )}
           </div>
           <div className="w-full">
             <Document
@@ -78,6 +93,7 @@ const Pdf2Image = () => {
           </div>
         </div>
       )}
+      {dialog}
     </div>
   );
 };

@@ -7,28 +7,45 @@ import { formatFileSize } from '@/utils/sizeComputer';
 
 export interface UploadPdfRef {
   file: File | null;
+  pdfBuffer: ArrayBuffer | null;
   removePdfFile: () => void;
 }
+
 interface UploadPdfProps {
-  onFileChange: (file: File | null) => void;
+  onFileChange: (file: File | null, buffer: ArrayBuffer | null) => void;
 }
 
 const UploadPdf = forwardRef<UploadPdfRef, UploadPdfProps>(({ onFileChange }, ref) => {
   const [file, setFile] = useState<File | null>(null);
-  const uploadFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [pdfBuffer, setPdfBuffer] = useState<ArrayBuffer | null>(null);
+
+  const uploadFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setFile(e.target.files[0]);
-      onFileChange(e.target.files[0]);
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+
+      try {
+        const buffer = await selectedFile.arrayBuffer();
+        setPdfBuffer(buffer);
+        onFileChange(selectedFile, buffer);
+      } catch (error) {
+        console.error('Error reading file:', error);
+        setFile(null);
+        setPdfBuffer(null);
+        onFileChange(null, null);
+      }
     }
   };
 
   const removePdfFile = () => {
     setFile(null);
-    onFileChange(null);
+    setPdfBuffer(null);
+    onFileChange(null, null);
   };
 
   useImperativeHandle(ref, () => ({
     file,
+    pdfBuffer,
     removePdfFile,
   }));
 

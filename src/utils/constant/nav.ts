@@ -41,10 +41,11 @@ export const tools: ToolCategory[] = [
     title: 'PDF工具',
     icon: FileOutput,
     children: [
-      { title: 'PDF转Word', href: '/pdf/to-word' },
-      { title: 'PDF转图片', href: '/pdf/to-image' },
-      { title: '拆分PDF', href: '/pdf/split' },
-      { title: '压缩PDF', href: '/pdf/compress' },
+      { title: 'PDF工具', href: '/pdf' },
+      // { title: 'PDF转Word', href: '/pdf/to-word' },
+      // { title: 'PDF转图片', href: '/pdf/to-image' },
+      // { title: '拆分PDF', href: '/pdf/split' },
+      // { title: '压缩PDF', href: '/pdf/compress' },
     ],
   },
   {

@@ -199,14 +199,34 @@ const renderPhoto = (image: Photo['image'], options: SandboxOptions): HTMLCanvas
   return canvas;
 };
 
-const loadLogo = (pathname: string): HTMLImageElement => {
-  const image = new Image();
-  image.src = pathname;
+const loadLogo = (
+  pathname: string,
+): HTMLImageElement | { width: number; height: number; src: string } => {
+  // 检测是否在浏览器环境
+  const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
 
-  return image;
+  if (isBrowser) {
+    // 客户端环境使用HTMLImageElement
+    const image = new Image();
+    image.src = pathname;
+
+    return image;
+  } else {
+    // 服务端环境返回兼容对象
+    // 注意：在实际服务端使用时，可能需要使用如sharp等库获取实际图片尺寸
+    // 这里提供一个基本的兼容对象，实际项目中可能需要根据需求调整
+    return {
+      width: 100, // 默认宽度，实际使用时应该从图片中读取
+      height: 100, // 默认高度，实际使用时应该从图片中读取
+      src: pathname,
+    };
+  }
 };
 
-const supportLogo = new Map<string, HTMLImageElement>();
+const supportLogo = new Map<
+  string,
+  HTMLImageElement | { width: number; height: number; src: string }
+>();
 
 const standMap = [
   'APPLE',
@@ -358,7 +378,7 @@ const renderBottomInfo = (
   let TARGET_LOGO_HEIGHT = FONT_SIZE * 2;
   const TARGET_LOGO_WIDTH = 400;
 
-  let logo: HTMLImageElement | undefined;
+  let logo: HTMLImageElement | { width: number; height: number; src: string } | undefined;
 
   standMap.forEach((stand) => {
     if (make?.toUpperCase().includes(stand) || model?.toUpperCase().includes(stand)) {
@@ -374,13 +394,20 @@ const renderBottomInfo = (
       TARGET_LOGO_HEIGHT = (logo.height / logo.width) * TARGET_LOGO_WIDTH;
     }
 
-    context.drawImage(
-      logo,
-      canvas.width - Math.max(topWidth, bottomWidth) - FONT_SIZE * 2 - FONT_SIZE - LOGO_WIDTH,
-      canvas.height - PADDING_BOTTOM / 2 - TARGET_LOGO_HEIGHT / 2,
-      LOGO_WIDTH,
-      TARGET_LOGO_HEIGHT,
-    );
+    // 检查是否为浏览器环境下的HTMLImageElement
+    const isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
+
+    if (isBrowser) {
+      context.drawImage(
+        logo as HTMLImageElement,
+        canvas.width - Math.max(topWidth, bottomWidth) - FONT_SIZE * 2 - FONT_SIZE - LOGO_WIDTH,
+        canvas.height - PADDING_BOTTOM / 2 - TARGET_LOGO_HEIGHT / 2,
+        LOGO_WIDTH,
+        TARGET_LOGO_HEIGHT,
+      );
+    }
+    // 注意：在服务端环境中，这里不会执行drawImage操作
+    // 如果需要在服务端渲染图像，需要使用Node.js的canvas库
   }
 
   return canvas;

@@ -32,6 +32,9 @@ importers:
       gifuct-js:
         specifier: ^2.1.2
         version: 2.1.2
+      exifreader:
+        specifier: ^4.27.0
+        version: 4.27.0
       jszip:
         specifier: ^3.10.1
         version: 3.10.1
@@ -2473,6 +2476,10 @@ packages:
   '@webassemblyjs/wast-printer@1.12.1':
     resolution: {integrity: sha512-+X4WAlOisVWQMikjbcvY2e0rwPsKQ9F688lksZhBcPycBBuii3O7m8FACbDMWDojpAqvjIncrG8J0XHKyQfVeA==}
 
+  '@xmldom/xmldom@0.9.8':
+    resolution: {integrity: sha512-p96FSY54r+WJ50FIOsCOjyj/wavs8921hG5+kVMmZgKcvIKxMXHTrjNJvRgWa/zuX3B6t2lijLNFaOyuxUH+2A==}
+    engines: {node: '>=14.6'}
+
   '@xtuc/ieee754@1.2.0':
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
 
@@ -3614,6 +3621,8 @@ packages:
   expand-template@2.0.3:
     resolution: {integrity: sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==}
     engines: {node: '>=6'}
+  exifreader@4.27.0:
+    resolution: {integrity: sha512-wrjtidE4MN5yQGI0ydeJm0Yw+HeCrziQGj5MccnHS0G+IyDoF8cyazKabXxj9F5LjXxqYTKiXm9nTYqvKAESzg==}
 
   expand-tilde@2.0.2:
     resolution: {integrity: sha512-A5EmesHW6rfnZ9ysHQjPdJRni0SRar0tjtG5MNtm9n5TUvsYU8oozprtRD4AqHxcZWWlVuAmQo2nWKfN9oyjTw==}
@@ -9019,6 +9028,9 @@ snapshots:
       '@webassemblyjs/ast': 1.12.1
       '@xtuc/long': 4.2.2
 
+  '@xmldom/xmldom@0.9.8':
+    optional: true
+
   '@xtuc/ieee754@1.2.0': {}
 
   '@xtuc/long@4.2.2': {}
@@ -10439,6 +10451,9 @@ snapshots:
 
   expand-template@2.0.3:
     optional: true
+  exifreader@4.27.0:
+    optionalDependencies:
+      '@xmldom/xmldom': 0.9.8
 
   expand-tilde@2.0.2:
     dependencies:

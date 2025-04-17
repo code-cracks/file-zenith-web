@@ -1,113 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="31" failures="9" errors="0" time="2.0165119">
-    <testsuite name="tests/integration/components/Header-ThemeButton.test.tsx" timestamp="2025-04-15T15:30:24.433Z" hostname="DESKTOP-Q8HVV4F" tests="5" failures="0" errors="0" skipped="0" time="0.1453724">
-        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="ThemeButton单独测试 &gt; 点击按钮时应切换主题" time="0.0415545">
+<testsuites name="vitest tests" tests="31" failures="8" errors="0" time="2.0707427">
+    <testsuite name="tests/integration/components/Header-ThemeButton.test.tsx" timestamp="2025-04-17T15:33:20.002Z" hostname="DESKTOP-Q8HVV4F" tests="5" failures="0" errors="0" skipped="0" time="0.2337734">
+        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="ThemeButton单独测试 &gt; 点击按钮时应切换主题" time="0.0535212">
         </testcase>
-        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; Header 应该包含 ThemeButton 组件" time="0.0278703">
+        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; Header 应该包含 ThemeButton 组件" time="0.0568487">
         </testcase>
-        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 点击 Header 中的 ThemeButton 应该切换主题" time="0.0288191">
+        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 点击 Header 中的 ThemeButton 应该切换主题" time="0.0461303">
         </testcase>
-        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 在移动视图中应展示菜单按钮" time="0.0192033">
+        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 在移动视图中应展示菜单按钮" time="0.039454">
         </testcase>
-        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 点击移动菜单按钮应打开移动导航" time="0.0262498">
-        </testcase>
-    </testsuite>
-    <testsuite name="tests/integration/pages/HomePage.test.tsx" timestamp="2025-04-15T15:30:24.444Z" hostname="DESKTOP-Q8HVV4F" tests="3" failures="0" errors="0" skipped="0" time="0.1359175">
-        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 应该同时渲染 Header 和首页内容" time="0.0698212">
-        </testcase>
-        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 应该适当地集成主题功能" time="0.0340002">
-        </testcase>
-        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 在移动视图下应适当地响应式显示" time="0.0302518">
+        <testcase classname="tests/integration/components/Header-ThemeButton.test.tsx" name="Header 与 ThemeButton 集成 &gt; 点击移动菜单按钮应打开移动导航" time="0.036448">
         </testcase>
     </testsuite>
-    <testsuite name="tests/unit/components/ThemeButton.test.tsx" timestamp="2025-04-15T15:30:24.447Z" hostname="DESKTOP-Q8HVV4F" tests="3" failures="0" errors="0" skipped="0" time="0.0403653">
-        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 在亮色模式下应当显示月亮图标" time="0.0306469">
+    <testsuite name="tests/integration/pages/HomePage.test.tsx" timestamp="2025-04-17T15:33:20.004Z" hostname="DESKTOP-Q8HVV4F" tests="3" failures="0" errors="0" skipped="0" time="0.1964334">
+        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 应该同时渲染 Header 和首页内容" time="0.094595">
         </testcase>
-        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 在暗色模式下应当显示太阳图标" time="0.0021411">
+        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 应该适当地集成主题功能" time="0.0475901">
         </testcase>
-        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 点击按钮时应当切换主题" time="0.0060316">
-        </testcase>
-    </testsuite>
-    <testsuite name="tests/unit/hooks/use-mobile.test.tsx" timestamp="2025-04-15T15:30:24.448Z" hostname="DESKTOP-Q8HVV4F" tests="5" failures="0" errors="0" skipped="0" time="0.0255765">
-        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在移动设备宽度下返回true" time="0.0153292">
-        </testcase>
-        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在桌面宽度下返回false" time="0.0019363">
-        </testcase>
-        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该为媒体查询添加事件监听器" time="0.0036858">
-        </testcase>
-        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在卸载时清理事件监听器" time="0.0018138">
-        </testcase>
-        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在媒体查询变化时更新状态" time="0.0012745">
+        <testcase classname="tests/integration/pages/HomePage.test.tsx" name="首页集成测试 &gt; 在移动视图下应适当地响应式显示" time="0.052776">
         </testcase>
     </testsuite>
-    <testsuite name="tests/unit/utils/cn.test.ts" timestamp="2025-04-15T15:30:24.450Z" hostname="DESKTOP-Q8HVV4F" tests="6" failures="0" errors="0" skipped="0" time="0.0083381">
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该合并多个类名字符串" time="0.0062734">
+    <testsuite name="tests/unit/components/ThemeButton.test.tsx" timestamp="2025-04-17T15:33:20.005Z" hostname="DESKTOP-Q8HVV4F" tests="3" failures="0" errors="0" skipped="0" time="0.0813139">
+        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 在亮色模式下应当显示月亮图标" time="0.045192">
         </testcase>
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该处理条件类名" time="0.0003589">
+        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 在暗色模式下应当显示太阳图标" time="0.0099998">
         </testcase>
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该通过tailwind-merge解决类名冲突" time="0.0001728">
-        </testcase>
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该正确处理对象形式的类名" time="0.0001054">
-        </testcase>
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该处理数组形式的类名" time="0.0000841">
-        </testcase>
-        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该忽略null、undefined和false值" time="0.0000605">
+        <testcase classname="tests/unit/components/ThemeButton.test.tsx" name="ThemeButton &gt; 点击按钮时应当切换主题" time="0.0187616">
         </testcase>
     </testsuite>
-    <testsuite name="tests/unit/pages/image/collage/page.test.tsx" timestamp="2025-04-15T15:30:24.453Z" hostname="DESKTOP-Q8HVV4F" tests="9" failures="9" errors="0" skipped="0" time="1.6609421">
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 应正确渲染页面框架" time="0.1845025">
-            <failure message="Unable to find an accessible element with the role &quot;heading&quot; and name `/图片拼接工具/i`
+    <testsuite name="tests/unit/hooks/use-mobile.test.tsx" timestamp="2025-04-17T15:33:20.006Z" hostname="DESKTOP-Q8HVV4F" tests="5" failures="0" errors="0" skipped="0" time="0.0220936">
+        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在移动设备宽度下返回true" time="0.0110572">
+        </testcase>
+        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在桌面宽度下返回false" time="0.0013564">
+        </testcase>
+        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该为媒体查询添加事件监听器" time="0.0042091">
+        </testcase>
+        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在卸载时清理事件监听器" time="0.0018874">
+        </testcase>
+        <testcase classname="tests/unit/hooks/use-mobile.test.tsx" name="useIsMobile &gt; 应该在媒体查询变化时更新状态" time="0.0022991">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/utils/cn.test.ts" timestamp="2025-04-17T15:33:20.007Z" hostname="DESKTOP-Q8HVV4F" tests="6" failures="0" errors="0" skipped="0" time="0.0069448">
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该合并多个类名字符串" time="0.0046763">
+        </testcase>
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该处理条件类名" time="0.0002246">
+        </testcase>
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该通过tailwind-merge解决类名冲突" time="0.0002587">
+        </testcase>
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该正确处理对象形式的类名" time="0.00029">
+        </testcase>
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该处理数组形式的类名" time="0.0002188">
+        </testcase>
+        <testcase classname="tests/unit/utils/cn.test.ts" name="cn utility function &gt; 应该忽略null、undefined和false值" time="0.0001012">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/pages/image/collage/page.test.tsx" timestamp="2025-04-17T15:33:20.008Z" hostname="DESKTOP-Q8HVV4F" tests="9" failures="8" errors="0" skipped="0" time="1.5301836">
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 1. 图片上传管理 &gt; 应正确处理多文件上传" time="0.121661">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
 
-Here are the accessible roles:
+            </system-out>
+            <failure message="Cannot read properties of null (reading &apos;namespaceURI&apos;)" type="TypeError">
+TypeError: Cannot read properties of null (reading &apos;namespaceURI&apos;)
+ ❯ isElementType node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utils/misc/isElementType.js:2:17
+ ❯ Object.upload node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utility/upload.js:9:19
+ ❯ node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:35
+ ❯ Object.asyncWrapper node_modules/.pnpm/@testing-library+react@16.2_5aef3ee8b2555a079c2b9ce844db8ed7/node_modules/@testing-library/react/dist/pure.js:88:28
+ ❯ wrapAsync node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/wrapAsync.js:6:24
+ ❯ Object.method node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:16
+ ❯ tests/unit/pages/image/collage/page.test.tsx:89:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 1. 图片上传管理 &gt; 应显示空状态提示" time="1.1502481">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
 
-  combobox:
-
-  Name &quot;&quot;:
-  [36m&lt;select[39m
-    [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;纵向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;vertical&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;网格布局&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;grid&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  [36m&lt;input[39m
-    [33mclass[39m=[32m&quot;w-full&quot;[39m
-    [33mmax[39m=[32m&quot;50&quot;[39m
-    [33mmin[39m=[32m&quot;0&quot;[39m
-    [33mtype[39m=[32m&quot;range&quot;[39m
-    [33mvalue[39m=[32m&quot;10&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成拼接图片&quot;:
-  [36m&lt;button[39m
-    [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-    [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-    [33mdisabled[39m=[32m&quot;&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
+            </system-out>
+            <failure message="Unable to find an element with the text: 请先上传图片. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
 Ignored nodes: comments, script, style
 [36m&lt;body&gt;[39m
@@ -234,336 +203,8 @@ Ignored nodes: comments, script, style
           [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
         [36m&gt;[39m
           [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Unable to find an accessible element with the role &quot;heading&quot; and name `/图片拼接工具/i`
-
-Here are the accessible roles:
-
-  combobox:
-
-  Name &quot;&quot;:
-  &lt;select
-    class=&quot;w-full p-2 border rounded-md&quot;
-  /&gt;
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  &lt;option
-    value=&quot;horizontal&quot;
-  /&gt;
-
-  Name &quot;纵向拼接&quot;:
-  &lt;option
-    value=&quot;vertical&quot;
-  /&gt;
-
-  Name &quot;网格布局&quot;:
-  &lt;option
-    value=&quot;grid&quot;
-  /&gt;
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  &lt;input
-    class=&quot;w-full&quot;
-    max=&quot;50&quot;
-    min=&quot;0&quot;
-    type=&quot;range&quot;
-    value=&quot;10&quot;
-  /&gt;
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成拼接图片&quot;:
-  &lt;button
-    class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-    data-testid=&quot;generate-btn&quot;
-    disabled=&quot;&quot;
-  /&gt;
-
-  --------------------------------------------------
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成拼接图片
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:52:23
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 文件上传功能 &gt; 应处理多文件上传并显示预览" time="1.0873206">
-            <failure message="Unable to find an element with the alt text: /Image \d/
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
             [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
           [36m/&gt;[39m
         [36m&lt;/div&gt;[39m
@@ -573,2035 +214,6 @@ Ignored nodes: comments, script, style
 [36m&lt;/body&gt;[39m
 
 Ignored nodes: comments, script, style
-[36m&lt;html&gt;[39m
-  [36m&lt;head /&gt;[39m
-  [36m&lt;body&gt;[39m
-    [36m&lt;div&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div[39m
-              [33mclass[39m=[32m&quot;mb-6&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;hidden&quot;[39m
-                [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-                [33mmultiple[39m=[32m&quot;&quot;[39m
-                [33mtype[39m=[32m&quot;file&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-                [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;svg[39m
-                  [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                  [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                  [33mfill[39m=[32m&quot;none&quot;[39m
-                  [33mheight[39m=[32m&quot;24&quot;[39m
-                  [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                  [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                  [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                  [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                  [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                  [33mwidth[39m=[32m&quot;24&quot;[39m
-                  [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-                [36m&gt;[39m
-                  [36m&lt;path[39m
-                    [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                  [36m/&gt;[39m
-                  [36m&lt;polyline[39m
-                    [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                  [36m/&gt;[39m
-                  [36m&lt;line[39m
-                    [33mx1[39m=[32m&quot;12&quot;[39m
-                    [33mx2[39m=[32m&quot;12&quot;[39m
-                    [33my1[39m=[32m&quot;3&quot;[39m
-                    [33my2[39m=[32m&quot;15&quot;[39m
-                  [36m/&gt;[39m
-                [36m&lt;/svg&gt;[39m
-                [36m&lt;span[39m
-                  [33mclass[39m=[32m&quot;text-sm&quot;[39m
-                [36m&gt;[39m
-                  [0m点击上传图片[0m
-                [36m&lt;/span&gt;[39m
-                [36m&lt;span[39m
-                  [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-                [36m&gt;[39m
-                  [0m支持多选[0m
-                [36m&lt;/span&gt;[39m
-              [36m&lt;/label&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div[39m
-              [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;div&gt;[39m
-                [36m&lt;label[39m
-                  [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-                [36m&gt;[39m
-                  [0m布局模式[0m
-                [36m&lt;/label&gt;[39m
-                [36m&lt;select[39m
-                  [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-                [36m&gt;[39m
-                  [36m&lt;option[39m
-                    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                  [36m&gt;[39m
-                    [0m横向拼接[0m
-                  [36m&lt;/option&gt;[39m
-                  [36m&lt;option[39m
-                    [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                  [36m&gt;[39m
-                    [0m纵向拼接[0m
-                  [36m&lt;/option&gt;[39m
-                  [36m&lt;option[39m
-                    [33mvalue[39m=[32m&quot;grid&quot;[39m
-                  [36m&gt;[39m
-                    [0m网格布局[0m
-                  [36m&lt;/option&gt;[39m
-                [36m&lt;/select&gt;[39m
-              [36m&lt;/div&gt;[39m
-              [36m&lt;div&gt;[39m
-                [36m&lt;label[39m
-                  [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-                [36m&gt;[39m
-                  [0m图片间距[0m
-                [36m&lt;/label&gt;[39m
-                [36m&lt;input[39m
-                  [33mclass[39m=[32m&quot;w-full&quot;[39m
-                  [33mmax[39m=[32m&quot;50&quot;[39m
-                  [33mmin[39m=[32m&quot;0&quot;[39m
-                  [33mtype[39m=[32m&quot;range&quot;[39m
-                  [33mvalue[39m=[32m&quot;10&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;span[39m
-                  [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-                [36m&gt;[39m
-                  [0m10[0m
-                  [0mpx[0m
-                [36m&lt;/span&gt;[39m
-              [36m&lt;/div&gt;[39m
-              [36m&lt;button[39m
-                [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-                [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-                [33mdisabled[39m=[32m&quot;&quot;[39m
-              [36m&gt;[39m
-                [0m生成中...[0m
-              [36m&lt;/button&gt;[39m
-            [36m&lt;/div&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div[39m
-              [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-              [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-            [36m/&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/body&gt;[39m
-[36m&lt;/html&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Unable to find an element with the alt text: /Image \d/
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-
-Ignored nodes: comments, script, style
-&lt;html&gt;
-  &lt;head /&gt;
-  &lt;body&gt;
-    &lt;div&gt;
-      &lt;div
-        class=&quot;container mx-auto p-4&quot;
-      &gt;
-        &lt;div
-          class=&quot;flex gap-6&quot;
-        &gt;
-          &lt;div
-            class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-          &gt;
-            &lt;div
-              class=&quot;mb-6&quot;
-            &gt;
-              &lt;input
-                class=&quot;hidden&quot;
-                id=&quot;stitch-upload&quot;
-                multiple=&quot;&quot;
-                type=&quot;file&quot;
-              /&gt;
-              &lt;label
-                class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-                for=&quot;stitch-upload&quot;
-              &gt;
-                &lt;svg
-                  class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                  data-testid=&quot;upload-button&quot;
-                  fill=&quot;none&quot;
-                  height=&quot;24&quot;
-                  stroke=&quot;currentColor&quot;
-                  stroke-linecap=&quot;round&quot;
-                  stroke-linejoin=&quot;round&quot;
-                  stroke-width=&quot;2&quot;
-                  viewBox=&quot;0 0 24 24&quot;
-                  width=&quot;24&quot;
-                  xmlns=&quot;http://www.w3.org/2000/svg&quot;
-                &gt;
-                  &lt;path
-                    d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                  /&gt;
-                  &lt;polyline
-                    points=&quot;17 8 12 3 7 8&quot;
-                  /&gt;
-                  &lt;line
-                    x1=&quot;12&quot;
-                    x2=&quot;12&quot;
-                    y1=&quot;3&quot;
-                    y2=&quot;15&quot;
-                  /&gt;
-                &lt;/svg&gt;
-                &lt;span
-                  class=&quot;text-sm&quot;
-                &gt;
-                  点击上传图片
-                &lt;/span&gt;
-                &lt;span
-                  class=&quot;text-xs text-gray-500&quot;
-                &gt;
-                  支持多选
-                &lt;/span&gt;
-              &lt;/label&gt;
-            &lt;/div&gt;
-            &lt;div
-              class=&quot;space-y-4&quot;
-            &gt;
-              &lt;div&gt;
-                &lt;label
-                  class=&quot;block text-sm font-medium mb-2&quot;
-                &gt;
-                  布局模式
-                &lt;/label&gt;
-                &lt;select
-                  class=&quot;w-full p-2 border rounded-md&quot;
-                &gt;
-                  &lt;option
-                    value=&quot;horizontal&quot;
-                  &gt;
-                    横向拼接
-                  &lt;/option&gt;
-                  &lt;option
-                    value=&quot;vertical&quot;
-                  &gt;
-                    纵向拼接
-                  &lt;/option&gt;
-                  &lt;option
-                    value=&quot;grid&quot;
-                  &gt;
-                    网格布局
-                  &lt;/option&gt;
-                &lt;/select&gt;
-              &lt;/div&gt;
-              &lt;div&gt;
-                &lt;label
-                  class=&quot;block text-sm font-medium mb-2&quot;
-                &gt;
-                  图片间距
-                &lt;/label&gt;
-                &lt;input
-                  class=&quot;w-full&quot;
-                  max=&quot;50&quot;
-                  min=&quot;0&quot;
-                  type=&quot;range&quot;
-                  value=&quot;10&quot;
-                /&gt;
-                &lt;span
-                  class=&quot;text-xs text-gray-500&quot;
-                &gt;
-                  10
-                  px
-                &lt;/span&gt;
-              &lt;/div&gt;
-              &lt;button
-                class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-                data-testid=&quot;generate-btn&quot;
-                disabled=&quot;&quot;
-              &gt;
-                生成中...
-              &lt;/button&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-          &gt;
-            &lt;div
-              class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-              style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-            /&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
- ❯ Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/wait-for.js:163:27
- ❯ tests/unit/pages/image/collage/page.test.tsx:73:19
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 文件上传功能 &gt; 应处理无效文件类型" time="0.0429625">
-            <failure message="expected &quot;bound &quot; to be called with arguments: [ &apos;仅支持图片文件&apos; ][90m
-
-Received: 
-
-[39m[90m
-
-Number of calls: [1m0[22m
-[39m" type="AssertionError">
-AssertionError: expected &quot;bound &quot; to be called with arguments: [ &apos;仅支持图片文件&apos; ]
-
-Received: 
-
-
-
-Number of calls: 0
-
- ❯ tests/unit/pages/image/collage/page.test.tsx:87:30
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 布局配置功能 &gt; 应正确切换布局模式" time="0.0622555">
-            <failure message="Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/queries/label-text.js:108:40
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:98:41
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 布局配置功能 &gt; 应正确调整网格列数" time="0.0297076">
-            <failure message="Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/queries/label-text.js:108:40
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:111:45
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 布局配置功能 &gt; 应正确应用图片间距" time="0.0303478">
-            <failure message="Found a label with the text of: 图片间距, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Found a label with the text of: 图片间距, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/queries/label-text.js:108:40
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:126:42
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 图片生成流程 &gt; 应完成完整生成流程" time="0.0816564">
-            <failure message="Unable to find an accessible element with the role &quot;button&quot; and name &quot;生成拼接图片&quot;
-
-Here are the accessible roles:
-
-  combobox:
-
-  Name &quot;&quot;:
-  [36m&lt;select[39m
-    [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;纵向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;vertical&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;网格布局&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;grid&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  [36m&lt;input[39m
-    [33mclass[39m=[32m&quot;w-full&quot;[39m
-    [33mmax[39m=[32m&quot;50&quot;[39m
-    [33mmin[39m=[32m&quot;0&quot;[39m
-    [33mtype[39m=[32m&quot;range&quot;[39m
-    [33mvalue[39m=[32m&quot;10&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成中...&quot;:
-  [36m&lt;button[39m
-    [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-    [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-    [33mdisabled[39m=[32m&quot;&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Unable to find an accessible element with the role &quot;button&quot; and name &quot;生成拼接图片&quot;
-
-Here are the accessible roles:
-
-  combobox:
-
-  Name &quot;&quot;:
-  &lt;select
-    class=&quot;w-full p-2 border rounded-md&quot;
-  /&gt;
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  &lt;option
-    value=&quot;horizontal&quot;
-  /&gt;
-
-  Name &quot;纵向拼接&quot;:
-  &lt;option
-    value=&quot;vertical&quot;
-  /&gt;
-
-  Name &quot;网格布局&quot;:
-  &lt;option
-    value=&quot;grid&quot;
-  /&gt;
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  &lt;input
-    class=&quot;w-full&quot;
-    max=&quot;50&quot;
-    min=&quot;0&quot;
-    type=&quot;range&quot;
-    value=&quot;10&quot;
-  /&gt;
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成中...&quot;:
-  &lt;button
-    class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-    data-testid=&quot;generate-btn&quot;
-    disabled=&quot;&quot;
-  /&gt;
-
-  --------------------------------------------------
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:146:37
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 图片生成流程 &gt; 应处理空文件生成" time="0.1256114">
-            <failure message="Unable to find an accessible element with the role &quot;button&quot; and name &quot;生成拼接图片&quot;
-
-Here are the accessible roles:
-
-  combobox:
-
-  Name &quot;&quot;:
-  [36m&lt;select[39m
-    [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;纵向拼接&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;vertical&quot;[39m
-  [36m/&gt;[39m
-
-  Name &quot;网格布局&quot;:
-  [36m&lt;option[39m
-    [33mvalue[39m=[32m&quot;grid&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  [36m&lt;input[39m
-    [33mclass[39m=[32m&quot;w-full&quot;[39m
-    [33mmax[39m=[32m&quot;50&quot;[39m
-    [33mmin[39m=[32m&quot;0&quot;[39m
-    [33mtype[39m=[32m&quot;range&quot;[39m
-    [33mvalue[39m=[32m&quot;10&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成中...&quot;:
-  [36m&lt;button[39m
-    [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-    [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-    [33mdisabled[39m=[32m&quot;&quot;[39m
-  [36m/&gt;[39m
-
-  --------------------------------------------------
-
-Ignored nodes: comments, script, style
-[36m&lt;body&gt;[39m
-  [36m&lt;div&gt;[39m
-    [36m&lt;div[39m
-      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
-    [36m&gt;[39m
-      [36m&lt;div[39m
-        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
-      [36m&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;mb-6&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;input[39m
-              [33mclass[39m=[32m&quot;hidden&quot;[39m
-              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
-              [33mmultiple[39m=[32m&quot;&quot;[39m
-              [33mtype[39m=[32m&quot;file&quot;[39m
-            [36m/&gt;[39m
-            [36m&lt;label[39m
-              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
-              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
-            [36m&gt;[39m
-              [36m&lt;svg[39m
-                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
-                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
-                [33mfill[39m=[32m&quot;none&quot;[39m
-                [33mheight[39m=[32m&quot;24&quot;[39m
-                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
-                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
-                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
-                [33mstroke-width[39m=[32m&quot;2&quot;[39m
-                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
-                [33mwidth[39m=[32m&quot;24&quot;[39m
-                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;path[39m
-                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;polyline[39m
-                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
-                [36m/&gt;[39m
-                [36m&lt;line[39m
-                  [33mx1[39m=[32m&quot;12&quot;[39m
-                  [33mx2[39m=[32m&quot;12&quot;[39m
-                  [33my1[39m=[32m&quot;3&quot;[39m
-                  [33my2[39m=[32m&quot;15&quot;[39m
-                [36m/&gt;[39m
-              [36m&lt;/svg&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-sm&quot;[39m
-              [36m&gt;[39m
-                [0m点击上传图片[0m
-              [36m&lt;/span&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m支持多选[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/label&gt;[39m
-          [36m&lt;/div&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
-          [36m&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m布局模式[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;select[39m
-                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
-              [36m&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
-                [36m&gt;[39m
-                  [0m横向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
-                [36m&gt;[39m
-                  [0m纵向拼接[0m
-                [36m&lt;/option&gt;[39m
-                [36m&lt;option[39m
-                  [33mvalue[39m=[32m&quot;grid&quot;[39m
-                [36m&gt;[39m
-                  [0m网格布局[0m
-                [36m&lt;/option&gt;[39m
-              [36m&lt;/select&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;div&gt;[39m
-              [36m&lt;label[39m
-                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
-              [36m&gt;[39m
-                [0m图片间距[0m
-              [36m&lt;/label&gt;[39m
-              [36m&lt;input[39m
-                [33mclass[39m=[32m&quot;w-full&quot;[39m
-                [33mmax[39m=[32m&quot;50&quot;[39m
-                [33mmin[39m=[32m&quot;0&quot;[39m
-                [33mtype[39m=[32m&quot;range&quot;[39m
-                [33mvalue[39m=[32m&quot;10&quot;[39m
-              [36m/&gt;[39m
-              [36m&lt;span[39m
-                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
-              [36m&gt;[39m
-                [0m10[0m
-                [0mpx[0m
-              [36m&lt;/span&gt;[39m
-            [36m&lt;/div&gt;[39m
-            [36m&lt;button[39m
-              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
-              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
-              [33mdisabled[39m=[32m&quot;&quot;[39m
-            [36m&gt;[39m
-              [0m生成中...[0m
-            [36m&lt;/button&gt;[39m
-          [36m&lt;/div&gt;[39m
-        [36m&lt;/div&gt;[39m
-        [36m&lt;div[39m
-          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
-        [36m&gt;[39m
-          [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
-            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
-          [36m/&gt;[39m
-        [36m&lt;/div&gt;[39m
-      [36m&lt;/div&gt;[39m
-    [36m&lt;/div&gt;[39m
-  [36m&lt;/div&gt;[39m
-[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Unable to find an accessible element with the role &quot;button&quot; and name &quot;生成拼接图片&quot;
-
-Here are the accessible roles:
-
-  combobox:
-
-  Name &quot;&quot;:
-  &lt;select
-    class=&quot;w-full p-2 border rounded-md&quot;
-  /&gt;
-
-  --------------------------------------------------
-  option:
-
-  Name &quot;横向拼接&quot;:
-  &lt;option
-    value=&quot;horizontal&quot;
-  /&gt;
-
-  Name &quot;纵向拼接&quot;:
-  &lt;option
-    value=&quot;vertical&quot;
-  /&gt;
-
-  Name &quot;网格布局&quot;:
-  &lt;option
-    value=&quot;grid&quot;
-  /&gt;
-
-  --------------------------------------------------
-  slider:
-
-  Name &quot;&quot;:
-  &lt;input
-    class=&quot;w-full&quot;
-    max=&quot;50&quot;
-    min=&quot;0&quot;
-    type=&quot;range&quot;
-    value=&quot;10&quot;
-  /&gt;
-
-  --------------------------------------------------
-  button:
-
-  Name &quot;生成中...&quot;:
-  &lt;button
-    class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-    data-testid=&quot;generate-btn&quot;
-    disabled=&quot;&quot;
-  /&gt;
-
-  --------------------------------------------------
-
-Ignored nodes: comments, script, style
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;div
-      class=&quot;container mx-auto p-4&quot;
-    &gt;
-      &lt;div
-        class=&quot;flex gap-6&quot;
-      &gt;
-        &lt;div
-          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
-        &gt;
-          &lt;div
-            class=&quot;mb-6&quot;
-          &gt;
-            &lt;input
-              class=&quot;hidden&quot;
-              id=&quot;stitch-upload&quot;
-              multiple=&quot;&quot;
-              type=&quot;file&quot;
-            /&gt;
-            &lt;label
-              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
-              for=&quot;stitch-upload&quot;
-            &gt;
-              &lt;svg
-                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
-                data-testid=&quot;upload-button&quot;
-                fill=&quot;none&quot;
-                height=&quot;24&quot;
-                stroke=&quot;currentColor&quot;
-                stroke-linecap=&quot;round&quot;
-                stroke-linejoin=&quot;round&quot;
-                stroke-width=&quot;2&quot;
-                viewBox=&quot;0 0 24 24&quot;
-                width=&quot;24&quot;
-                xmlns=&quot;http://www.w3.org/2000/svg&quot;
-              &gt;
-                &lt;path
-                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
-                /&gt;
-                &lt;polyline
-                  points=&quot;17 8 12 3 7 8&quot;
-                /&gt;
-                &lt;line
-                  x1=&quot;12&quot;
-                  x2=&quot;12&quot;
-                  y1=&quot;3&quot;
-                  y2=&quot;15&quot;
-                /&gt;
-              &lt;/svg&gt;
-              &lt;span
-                class=&quot;text-sm&quot;
-              &gt;
-                点击上传图片
-              &lt;/span&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                支持多选
-              &lt;/span&gt;
-            &lt;/label&gt;
-          &lt;/div&gt;
-          &lt;div
-            class=&quot;space-y-4&quot;
-          &gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                布局模式
-              &lt;/label&gt;
-              &lt;select
-                class=&quot;w-full p-2 border rounded-md&quot;
-              &gt;
-                &lt;option
-                  value=&quot;horizontal&quot;
-                &gt;
-                  横向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;vertical&quot;
-                &gt;
-                  纵向拼接
-                &lt;/option&gt;
-                &lt;option
-                  value=&quot;grid&quot;
-                &gt;
-                  网格布局
-                &lt;/option&gt;
-              &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div&gt;
-              &lt;label
-                class=&quot;block text-sm font-medium mb-2&quot;
-              &gt;
-                图片间距
-              &lt;/label&gt;
-              &lt;input
-                class=&quot;w-full&quot;
-                max=&quot;50&quot;
-                min=&quot;0&quot;
-                type=&quot;range&quot;
-                value=&quot;10&quot;
-              /&gt;
-              &lt;span
-                class=&quot;text-xs text-gray-500&quot;
-              &gt;
-                10
-                px
-              &lt;/span&gt;
-            &lt;/div&gt;
-            &lt;button
-              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
-              data-testid=&quot;generate-btn&quot;
-              disabled=&quot;&quot;
-            &gt;
-              生成中...
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
-        &gt;
-          &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
-            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
-          /&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
- ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
- ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:160:37
-            </failure>
-        </testcase>
-        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接页面 (/image/collage) &gt; 响应式布局 &gt; 应适配移动端视图" time="0.0144786">
-            <failure message="Unable to find an element by: [data-testid=&quot;preview-container&quot;]
-
-Ignored nodes: comments, script, style
 [36m&lt;body&gt;[39m
   [36m&lt;div&gt;[39m
     [36m&lt;div[39m
@@ -2726,7 +338,8 @@ Ignored nodes: comments, script, style
           [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
         [36m&gt;[39m
           [36m&lt;div[39m
-            [33mclass[39m=[32m&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
             [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
           [36m/&gt;[39m
         [36m&lt;/div&gt;[39m
@@ -2734,7 +347,7 @@ Ignored nodes: comments, script, style
     [36m&lt;/div&gt;[39m
   [36m&lt;/div&gt;[39m
 [36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
-TestingLibraryElementError: Unable to find an element by: [data-testid=&quot;preview-container&quot;]
+TestingLibraryElementError: Unable to find an element with the text: 请先上传图片. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
 
 Ignored nodes: comments, script, style
 &lt;body&gt;
@@ -2861,7 +474,829 @@ Ignored nodes: comments, script, style
           class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
         &gt;
           &lt;div
-            class=&quot;relative bg-gray-100 rounded-lg overflow-hidden&quot;
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
+            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;container mx-auto p-4&quot;
+    &gt;
+      &lt;div
+        class=&quot;flex gap-6&quot;
+      &gt;
+        &lt;div
+          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
+        &gt;
+          &lt;div
+            class=&quot;mb-6&quot;
+          &gt;
+            &lt;input
+              class=&quot;hidden&quot;
+              id=&quot;stitch-upload&quot;
+              multiple=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+            &lt;label
+              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
+              for=&quot;stitch-upload&quot;
+            &gt;
+              &lt;svg
+                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
+                data-testid=&quot;upload-button&quot;
+                fill=&quot;none&quot;
+                height=&quot;24&quot;
+                stroke=&quot;currentColor&quot;
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                stroke-width=&quot;2&quot;
+                viewBox=&quot;0 0 24 24&quot;
+                width=&quot;24&quot;
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              &gt;
+                &lt;path
+                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
+                /&gt;
+                &lt;polyline
+                  points=&quot;17 8 12 3 7 8&quot;
+                /&gt;
+                &lt;line
+                  x1=&quot;12&quot;
+                  x2=&quot;12&quot;
+                  y1=&quot;3&quot;
+                  y2=&quot;15&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span
+                class=&quot;text-sm&quot;
+              &gt;
+                点击上传图片
+              &lt;/span&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                支持多选
+              &lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div
+            class=&quot;space-y-4&quot;
+          &gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                布局模式
+              &lt;/label&gt;
+              &lt;select
+                class=&quot;w-full p-2 border rounded-md&quot;
+              &gt;
+                &lt;option
+                  value=&quot;horizontal&quot;
+                &gt;
+                  横向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;vertical&quot;
+                &gt;
+                  纵向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;grid&quot;
+                &gt;
+                  网格布局
+                &lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                图片间距
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;w-full&quot;
+                max=&quot;50&quot;
+                min=&quot;0&quot;
+                type=&quot;range&quot;
+                value=&quot;10&quot;
+              /&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                10
+                px
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button
+              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+              data-testid=&quot;generate-btn&quot;
+              disabled=&quot;&quot;
+            &gt;
+              生成拼接图片
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
+        &gt;
+          &lt;div
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
+            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ tests/unit/pages/image/collage/page.test.tsx:102:27
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 2. 布局配置选择 &gt; 应正确切换布局模式" time="0.0186822">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;div[39m
+      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;mb-6&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;input[39m
+              [33mclass[39m=[32m&quot;hidden&quot;[39m
+              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
+              [33mmultiple[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+            [36m&lt;label[39m
+              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
+              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
+            [36m&gt;[39m
+              [36m&lt;svg[39m
+                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
+                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
+                [33mfill[39m=[32m&quot;none&quot;[39m
+                [33mheight[39m=[32m&quot;24&quot;[39m
+                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
+                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
+                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
+                [33mstroke-width[39m=[32m&quot;2&quot;[39m
+                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
+                [33mwidth[39m=[32m&quot;24&quot;[39m
+                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;path[39m
+                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;polyline[39m
+                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;line[39m
+                  [33mx1[39m=[32m&quot;12&quot;[39m
+                  [33mx2[39m=[32m&quot;12&quot;[39m
+                  [33my1[39m=[32m&quot;3&quot;[39m
+                  [33my2[39m=[32m&quot;15&quot;[39m
+                [36m/&gt;[39m
+              [36m&lt;/svg&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-sm&quot;[39m
+              [36m&gt;[39m
+                [0m点击上传图片[0m
+              [36m&lt;/span&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m支持多选[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/label&gt;[39m
+          [36m&lt;/div&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m布局模式[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;select[39m
+                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+                [36m&gt;[39m
+                  [0m横向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
+                [36m&gt;[39m
+                  [0m纵向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;grid&quot;[39m
+                [36m&gt;[39m
+                  [0m网格布局[0m
+                [36m&lt;/option&gt;[39m
+              [36m&lt;/select&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m图片间距[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;input[39m
+                [33mclass[39m=[32m&quot;w-full&quot;[39m
+                [33mmax[39m=[32m&quot;50&quot;[39m
+                [33mmin[39m=[32m&quot;0&quot;[39m
+                [33mtype[39m=[32m&quot;range&quot;[39m
+                [33mvalue[39m=[32m&quot;10&quot;[39m
+              [36m/&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m10[0m
+                [0mpx[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;button[39m
+              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+              [33mdisabled[39m=[32m&quot;&quot;[39m
+            [36m&gt;[39m
+              [0m生成拼接图片[0m
+            [36m&lt;/button&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
+          [36m/&gt;[39m
+        [36m&lt;/div&gt;[39m
+      [36m&lt;/div&gt;[39m
+    [36m&lt;/div&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;container mx-auto p-4&quot;
+    &gt;
+      &lt;div
+        class=&quot;flex gap-6&quot;
+      &gt;
+        &lt;div
+          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
+        &gt;
+          &lt;div
+            class=&quot;mb-6&quot;
+          &gt;
+            &lt;input
+              class=&quot;hidden&quot;
+              id=&quot;stitch-upload&quot;
+              multiple=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+            &lt;label
+              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
+              for=&quot;stitch-upload&quot;
+            &gt;
+              &lt;svg
+                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
+                data-testid=&quot;upload-button&quot;
+                fill=&quot;none&quot;
+                height=&quot;24&quot;
+                stroke=&quot;currentColor&quot;
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                stroke-width=&quot;2&quot;
+                viewBox=&quot;0 0 24 24&quot;
+                width=&quot;24&quot;
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              &gt;
+                &lt;path
+                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
+                /&gt;
+                &lt;polyline
+                  points=&quot;17 8 12 3 7 8&quot;
+                /&gt;
+                &lt;line
+                  x1=&quot;12&quot;
+                  x2=&quot;12&quot;
+                  y1=&quot;3&quot;
+                  y2=&quot;15&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span
+                class=&quot;text-sm&quot;
+              &gt;
+                点击上传图片
+              &lt;/span&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                支持多选
+              &lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div
+            class=&quot;space-y-4&quot;
+          &gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                布局模式
+              &lt;/label&gt;
+              &lt;select
+                class=&quot;w-full p-2 border rounded-md&quot;
+              &gt;
+                &lt;option
+                  value=&quot;horizontal&quot;
+                &gt;
+                  横向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;vertical&quot;
+                &gt;
+                  纵向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;grid&quot;
+                &gt;
+                  网格布局
+                &lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                图片间距
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;w-full&quot;
+                max=&quot;50&quot;
+                min=&quot;0&quot;
+                type=&quot;range&quot;
+                value=&quot;10&quot;
+              /&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                10
+                px
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button
+              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+              data-testid=&quot;generate-btn&quot;
+              disabled=&quot;&quot;
+            &gt;
+              生成拼接图片
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
+        &gt;
+          &lt;div
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
+            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/queries/label-text.js:108:40
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/unit/pages/image/collage/page.test.tsx:111:29
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 3. 可视化预览系统 &gt; 应正确计算图片位置" time="0.0084868">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Cannot read properties of null (reading &apos;namespaceURI&apos;)" type="TypeError">
+TypeError: Cannot read properties of null (reading &apos;namespaceURI&apos;)
+ ❯ isElementType node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utils/misc/isElementType.js:2:17
+ ❯ Object.upload node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utility/upload.js:9:19
+ ❯ node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:35
+ ❯ Object.asyncWrapper node_modules/.pnpm/@testing-library+react@16.2_5aef3ee8b2555a079c2b9ce844db8ed7/node_modules/@testing-library/react/dist/pure.js:88:28
+ ❯ wrapAsync node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/wrapAsync.js:6:24
+ ❯ Object.method node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:16
+ ❯ tests/unit/pages/image/collage/page.test.tsx:129:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 3. 可视化预览系统 &gt; 应响应容器尺寸变化" time="0.0006462">
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 4. 拼接参数配置 &gt; 应更新间距参数" time="0.1346674">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Unable to find an accessible element with the role &quot;slider&quot; and name `/图片间距/`
+
+Here are the accessible roles:
+
+  combobox:
+
+  Name &quot;&quot;:
+  [36m&lt;select[39m
+    [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  option:
+
+  Name &quot;横向拼接&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+  [36m/&gt;[39m
+
+  Name &quot;纵向拼接&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;vertical&quot;[39m
+  [36m/&gt;[39m
+
+  Name &quot;网格布局&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;grid&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  slider:
+
+  Name &quot;&quot;:
+  [36m&lt;input[39m
+    [33mclass[39m=[32m&quot;w-full&quot;[39m
+    [33mmax[39m=[32m&quot;50&quot;[39m
+    [33mmin[39m=[32m&quot;0&quot;[39m
+    [33mtype[39m=[32m&quot;range&quot;[39m
+    [33mvalue[39m=[32m&quot;10&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  button:
+
+  Name &quot;生成拼接图片&quot;:
+  [36m&lt;button[39m
+    [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+    [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+    [33mdisabled[39m=[32m&quot;&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;div[39m
+      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;mb-6&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;input[39m
+              [33mclass[39m=[32m&quot;hidden&quot;[39m
+              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
+              [33mmultiple[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+            [36m&lt;label[39m
+              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
+              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
+            [36m&gt;[39m
+              [36m&lt;svg[39m
+                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
+                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
+                [33mfill[39m=[32m&quot;none&quot;[39m
+                [33mheight[39m=[32m&quot;24&quot;[39m
+                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
+                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
+                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
+                [33mstroke-width[39m=[32m&quot;2&quot;[39m
+                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
+                [33mwidth[39m=[32m&quot;24&quot;[39m
+                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;path[39m
+                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;polyline[39m
+                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;line[39m
+                  [33mx1[39m=[32m&quot;12&quot;[39m
+                  [33mx2[39m=[32m&quot;12&quot;[39m
+                  [33my1[39m=[32m&quot;3&quot;[39m
+                  [33my2[39m=[32m&quot;15&quot;[39m
+                [36m/&gt;[39m
+              [36m&lt;/svg&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-sm&quot;[39m
+              [36m&gt;[39m
+                [0m点击上传图片[0m
+              [36m&lt;/span&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m支持多选[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/label&gt;[39m
+          [36m&lt;/div&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m布局模式[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;select[39m
+                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+                [36m&gt;[39m
+                  [0m横向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
+                [36m&gt;[39m
+                  [0m纵向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;grid&quot;[39m
+                [36m&gt;[39m
+                  [0m网格布局[0m
+                [36m&lt;/option&gt;[39m
+              [36m&lt;/select&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m图片间距[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;input[39m
+                [33mclass[39m=[32m&quot;w-full&quot;[39m
+                [33mmax[39m=[32m&quot;50&quot;[39m
+                [33mmin[39m=[32m&quot;0&quot;[39m
+                [33mtype[39m=[32m&quot;range&quot;[39m
+                [33mvalue[39m=[32m&quot;10&quot;[39m
+              [36m/&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m10[0m
+                [0mpx[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;button[39m
+              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+              [33mdisabled[39m=[32m&quot;&quot;[39m
+            [36m&gt;[39m
+              [0m生成拼接图片[0m
+            [36m&lt;/button&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
+          [36m/&gt;[39m
+        [36m&lt;/div&gt;[39m
+      [36m&lt;/div&gt;[39m
+    [36m&lt;/div&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Unable to find an accessible element with the role &quot;slider&quot; and name `/图片间距/`
+
+Here are the accessible roles:
+
+  combobox:
+
+  Name &quot;&quot;:
+  &lt;select
+    class=&quot;w-full p-2 border rounded-md&quot;
+  /&gt;
+
+  --------------------------------------------------
+  option:
+
+  Name &quot;横向拼接&quot;:
+  &lt;option
+    value=&quot;horizontal&quot;
+  /&gt;
+
+  Name &quot;纵向拼接&quot;:
+  &lt;option
+    value=&quot;vertical&quot;
+  /&gt;
+
+  Name &quot;网格布局&quot;:
+  &lt;option
+    value=&quot;grid&quot;
+  /&gt;
+
+  --------------------------------------------------
+  slider:
+
+  Name &quot;&quot;:
+  &lt;input
+    class=&quot;w-full&quot;
+    max=&quot;50&quot;
+    min=&quot;0&quot;
+    type=&quot;range&quot;
+    value=&quot;10&quot;
+  /&gt;
+
+  --------------------------------------------------
+  button:
+
+  Name &quot;生成拼接图片&quot;:
+  &lt;button
+    class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+    data-testid=&quot;generate-btn&quot;
+    disabled=&quot;&quot;
+  /&gt;
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;container mx-auto p-4&quot;
+    &gt;
+      &lt;div
+        class=&quot;flex gap-6&quot;
+      &gt;
+        &lt;div
+          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
+        &gt;
+          &lt;div
+            class=&quot;mb-6&quot;
+          &gt;
+            &lt;input
+              class=&quot;hidden&quot;
+              id=&quot;stitch-upload&quot;
+              multiple=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+            &lt;label
+              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
+              for=&quot;stitch-upload&quot;
+            &gt;
+              &lt;svg
+                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
+                data-testid=&quot;upload-button&quot;
+                fill=&quot;none&quot;
+                height=&quot;24&quot;
+                stroke=&quot;currentColor&quot;
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                stroke-width=&quot;2&quot;
+                viewBox=&quot;0 0 24 24&quot;
+                width=&quot;24&quot;
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              &gt;
+                &lt;path
+                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
+                /&gt;
+                &lt;polyline
+                  points=&quot;17 8 12 3 7 8&quot;
+                /&gt;
+                &lt;line
+                  x1=&quot;12&quot;
+                  x2=&quot;12&quot;
+                  y1=&quot;3&quot;
+                  y2=&quot;15&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span
+                class=&quot;text-sm&quot;
+              &gt;
+                点击上传图片
+              &lt;/span&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                支持多选
+              &lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div
+            class=&quot;space-y-4&quot;
+          &gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                布局模式
+              &lt;/label&gt;
+              &lt;select
+                class=&quot;w-full p-2 border rounded-md&quot;
+              &gt;
+                &lt;option
+                  value=&quot;horizontal&quot;
+                &gt;
+                  横向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;vertical&quot;
+                &gt;
+                  纵向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;grid&quot;
+                &gt;
+                  网格布局
+                &lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                图片间距
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;w-full&quot;
+                max=&quot;50&quot;
+                min=&quot;0&quot;
+                type=&quot;range&quot;
+                value=&quot;10&quot;
+              /&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                10
+                px
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button
+              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+              data-testid=&quot;generate-btn&quot;
+              disabled=&quot;&quot;
+            &gt;
+              生成拼接图片
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
+        &gt;
+          &lt;div
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
             style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
           /&gt;
         &lt;/div&gt;
@@ -2873,7 +1308,693 @@ Ignored nodes: comments, script, style
  ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
  ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
  ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
- ❯ tests/unit/pages/image/collage/page.test.tsx:174:27
+ ❯ tests/unit/pages/image/collage/page.test.tsx:162:29
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 4. 拼接参数配置 &gt; 应限制网格列数输入范围" time="0.0102965">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;div[39m
+      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;mb-6&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;input[39m
+              [33mclass[39m=[32m&quot;hidden&quot;[39m
+              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
+              [33mmultiple[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+            [36m&lt;label[39m
+              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
+              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
+            [36m&gt;[39m
+              [36m&lt;svg[39m
+                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
+                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
+                [33mfill[39m=[32m&quot;none&quot;[39m
+                [33mheight[39m=[32m&quot;24&quot;[39m
+                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
+                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
+                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
+                [33mstroke-width[39m=[32m&quot;2&quot;[39m
+                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
+                [33mwidth[39m=[32m&quot;24&quot;[39m
+                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;path[39m
+                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;polyline[39m
+                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;line[39m
+                  [33mx1[39m=[32m&quot;12&quot;[39m
+                  [33mx2[39m=[32m&quot;12&quot;[39m
+                  [33my1[39m=[32m&quot;3&quot;[39m
+                  [33my2[39m=[32m&quot;15&quot;[39m
+                [36m/&gt;[39m
+              [36m&lt;/svg&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-sm&quot;[39m
+              [36m&gt;[39m
+                [0m点击上传图片[0m
+              [36m&lt;/span&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m支持多选[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/label&gt;[39m
+          [36m&lt;/div&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m布局模式[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;select[39m
+                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+                [36m&gt;[39m
+                  [0m横向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
+                [36m&gt;[39m
+                  [0m纵向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;grid&quot;[39m
+                [36m&gt;[39m
+                  [0m网格布局[0m
+                [36m&lt;/option&gt;[39m
+              [36m&lt;/select&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m图片间距[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;input[39m
+                [33mclass[39m=[32m&quot;w-full&quot;[39m
+                [33mmax[39m=[32m&quot;50&quot;[39m
+                [33mmin[39m=[32m&quot;0&quot;[39m
+                [33mtype[39m=[32m&quot;range&quot;[39m
+                [33mvalue[39m=[32m&quot;10&quot;[39m
+              [36m/&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m10[0m
+                [0mpx[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;button[39m
+              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+              [33mdisabled[39m=[32m&quot;&quot;[39m
+            [36m&gt;[39m
+              [0m生成拼接图片[0m
+            [36m&lt;/button&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
+          [36m/&gt;[39m
+        [36m&lt;/div&gt;[39m
+      [36m&lt;/div&gt;[39m
+    [36m&lt;/div&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Found a label with the text of: 布局模式, however no form control was found associated to that label. Make sure you&apos;re using the &quot;for&quot; attribute or &quot;aria-labelledby&quot; attribute correctly.
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;container mx-auto p-4&quot;
+    &gt;
+      &lt;div
+        class=&quot;flex gap-6&quot;
+      &gt;
+        &lt;div
+          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
+        &gt;
+          &lt;div
+            class=&quot;mb-6&quot;
+          &gt;
+            &lt;input
+              class=&quot;hidden&quot;
+              id=&quot;stitch-upload&quot;
+              multiple=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+            &lt;label
+              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
+              for=&quot;stitch-upload&quot;
+            &gt;
+              &lt;svg
+                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
+                data-testid=&quot;upload-button&quot;
+                fill=&quot;none&quot;
+                height=&quot;24&quot;
+                stroke=&quot;currentColor&quot;
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                stroke-width=&quot;2&quot;
+                viewBox=&quot;0 0 24 24&quot;
+                width=&quot;24&quot;
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              &gt;
+                &lt;path
+                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
+                /&gt;
+                &lt;polyline
+                  points=&quot;17 8 12 3 7 8&quot;
+                /&gt;
+                &lt;line
+                  x1=&quot;12&quot;
+                  x2=&quot;12&quot;
+                  y1=&quot;3&quot;
+                  y2=&quot;15&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span
+                class=&quot;text-sm&quot;
+              &gt;
+                点击上传图片
+              &lt;/span&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                支持多选
+              &lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div
+            class=&quot;space-y-4&quot;
+          &gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                布局模式
+              &lt;/label&gt;
+              &lt;select
+                class=&quot;w-full p-2 border rounded-md&quot;
+              &gt;
+                &lt;option
+                  value=&quot;horizontal&quot;
+                &gt;
+                  横向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;vertical&quot;
+                &gt;
+                  纵向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;grid&quot;
+                &gt;
+                  网格布局
+                &lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                图片间距
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;w-full&quot;
+                max=&quot;50&quot;
+                min=&quot;0&quot;
+                type=&quot;range&quot;
+                value=&quot;10&quot;
+              /&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                10
+                px
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button
+              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+              data-testid=&quot;generate-btn&quot;
+              disabled=&quot;&quot;
+            &gt;
+              生成拼接图片
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
+        &gt;
+          &lt;div
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
+            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ getAllByLabelText node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/queries/label-text.js:108:40
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/unit/pages/image/collage/page.test.tsx:174:39
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 5. 图片生成和下载 &gt; 应生成正确尺寸的图片" time="0.007712">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Cannot read properties of null (reading &apos;namespaceURI&apos;)" type="TypeError">
+TypeError: Cannot read properties of null (reading &apos;namespaceURI&apos;)
+ ❯ isElementType node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utils/misc/isElementType.js:2:17
+ ❯ Object.upload node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/utility/upload.js:9:19
+ ❯ node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:35
+ ❯ Object.asyncWrapper node_modules/.pnpm/@testing-library+react@16.2_5aef3ee8b2555a079c2b9ce844db8ed7/node_modules/@testing-library/react/dist/pure.js:88:28
+ ❯ wrapAsync node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/wrapAsync.js:6:24
+ ❯ Object.method node_modules/.pnpm/@testing-library+user-event_cb78dbca79d2daaf2e0b841406a0b2aa/node_modules/@testing-library/user-event/dist/esm/setup/setup.js:83:16
+ ❯ tests/unit/pages/image/collage/page.test.tsx:194:18
+            </failure>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 5. 图片生成和下载 &gt; 应使用配置的质量参数" time="0.0717498">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m
+
+            </system-out>
+            <failure message="Unable to find an accessible element with the role &quot;spinbutton&quot; and name `/输出质量/`
+
+Here are the accessible roles:
+
+  combobox:
+
+  Name &quot;&quot;:
+  [36m&lt;select[39m
+    [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  option:
+
+  Name &quot;横向拼接&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+  [36m/&gt;[39m
+
+  Name &quot;纵向拼接&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;vertical&quot;[39m
+  [36m/&gt;[39m
+
+  Name &quot;网格布局&quot;:
+  [36m&lt;option[39m
+    [33mvalue[39m=[32m&quot;grid&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  slider:
+
+  Name &quot;&quot;:
+  [36m&lt;input[39m
+    [33mclass[39m=[32m&quot;w-full&quot;[39m
+    [33mmax[39m=[32m&quot;50&quot;[39m
+    [33mmin[39m=[32m&quot;0&quot;[39m
+    [33mtype[39m=[32m&quot;range&quot;[39m
+    [33mvalue[39m=[32m&quot;10&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+  button:
+
+  Name &quot;生成拼接图片&quot;:
+  [36m&lt;button[39m
+    [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+    [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+    [33mdisabled[39m=[32m&quot;&quot;[39m
+  [36m/&gt;[39m
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+[36m&lt;body&gt;[39m
+  [36m&lt;div&gt;[39m
+    [36m&lt;div[39m
+      [33mclass[39m=[32m&quot;container mx-auto p-4&quot;[39m
+    [36m&gt;[39m
+      [36m&lt;div[39m
+        [33mclass[39m=[32m&quot;flex gap-6&quot;[39m
+      [36m&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;mb-6&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;input[39m
+              [33mclass[39m=[32m&quot;hidden&quot;[39m
+              [33mid[39m=[32m&quot;stitch-upload&quot;[39m
+              [33mmultiple[39m=[32m&quot;&quot;[39m
+              [33mtype[39m=[32m&quot;file&quot;[39m
+            [36m/&gt;[39m
+            [36m&lt;label[39m
+              [33mclass[39m=[32m&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;[39m
+              [33mfor[39m=[32m&quot;stitch-upload&quot;[39m
+            [36m&gt;[39m
+              [36m&lt;svg[39m
+                [33mclass[39m=[32m&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;[39m
+                [33mdata-testid[39m=[32m&quot;upload-button&quot;[39m
+                [33mfill[39m=[32m&quot;none&quot;[39m
+                [33mheight[39m=[32m&quot;24&quot;[39m
+                [33mstroke[39m=[32m&quot;currentColor&quot;[39m
+                [33mstroke-linecap[39m=[32m&quot;round&quot;[39m
+                [33mstroke-linejoin[39m=[32m&quot;round&quot;[39m
+                [33mstroke-width[39m=[32m&quot;2&quot;[39m
+                [33mviewBox[39m=[32m&quot;0 0 24 24&quot;[39m
+                [33mwidth[39m=[32m&quot;24&quot;[39m
+                [33mxmlns[39m=[32m&quot;http://www.w3.org/2000/svg&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;path[39m
+                  [33md[39m=[32m&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;polyline[39m
+                  [33mpoints[39m=[32m&quot;17 8 12 3 7 8&quot;[39m
+                [36m/&gt;[39m
+                [36m&lt;line[39m
+                  [33mx1[39m=[32m&quot;12&quot;[39m
+                  [33mx2[39m=[32m&quot;12&quot;[39m
+                  [33my1[39m=[32m&quot;3&quot;[39m
+                  [33my2[39m=[32m&quot;15&quot;[39m
+                [36m/&gt;[39m
+              [36m&lt;/svg&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-sm&quot;[39m
+              [36m&gt;[39m
+                [0m点击上传图片[0m
+              [36m&lt;/span&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m支持多选[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/label&gt;[39m
+          [36m&lt;/div&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;space-y-4&quot;[39m
+          [36m&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m布局模式[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;select[39m
+                [33mclass[39m=[32m&quot;w-full p-2 border rounded-md&quot;[39m
+              [36m&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;horizontal&quot;[39m
+                [36m&gt;[39m
+                  [0m横向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;vertical&quot;[39m
+                [36m&gt;[39m
+                  [0m纵向拼接[0m
+                [36m&lt;/option&gt;[39m
+                [36m&lt;option[39m
+                  [33mvalue[39m=[32m&quot;grid&quot;[39m
+                [36m&gt;[39m
+                  [0m网格布局[0m
+                [36m&lt;/option&gt;[39m
+              [36m&lt;/select&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;div&gt;[39m
+              [36m&lt;label[39m
+                [33mclass[39m=[32m&quot;block text-sm font-medium mb-2&quot;[39m
+              [36m&gt;[39m
+                [0m图片间距[0m
+              [36m&lt;/label&gt;[39m
+              [36m&lt;input[39m
+                [33mclass[39m=[32m&quot;w-full&quot;[39m
+                [33mmax[39m=[32m&quot;50&quot;[39m
+                [33mmin[39m=[32m&quot;0&quot;[39m
+                [33mtype[39m=[32m&quot;range&quot;[39m
+                [33mvalue[39m=[32m&quot;10&quot;[39m
+              [36m/&gt;[39m
+              [36m&lt;span[39m
+                [33mclass[39m=[32m&quot;text-xs text-gray-500&quot;[39m
+              [36m&gt;[39m
+                [0m10[0m
+                [0mpx[0m
+              [36m&lt;/span&gt;[39m
+            [36m&lt;/div&gt;[39m
+            [36m&lt;button[39m
+              [33mclass[39m=[32m&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;[39m
+              [33mdata-testid[39m=[32m&quot;generate-btn&quot;[39m
+              [33mdisabled[39m=[32m&quot;&quot;[39m
+            [36m&gt;[39m
+              [0m生成拼接图片[0m
+            [36m&lt;/button&gt;[39m
+          [36m&lt;/div&gt;[39m
+        [36m&lt;/div&gt;[39m
+        [36m&lt;div[39m
+          [33mclass[39m=[32m&quot;flex-1 bg-white p-4 rounded-lg border&quot;[39m
+        [36m&gt;[39m
+          [36m&lt;div[39m
+            [33mclass[39m=[32m&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;[39m
+            [33mstyle[39m=[32m&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;[39m
+          [36m/&gt;[39m
+        [36m&lt;/div&gt;[39m
+      [36m&lt;/div&gt;[39m
+    [36m&lt;/div&gt;[39m
+  [36m&lt;/div&gt;[39m
+[36m&lt;/body&gt;[39m" type="TestingLibraryElementError">
+TestingLibraryElementError: Unable to find an accessible element with the role &quot;spinbutton&quot; and name `/输出质量/`
+
+Here are the accessible roles:
+
+  combobox:
+
+  Name &quot;&quot;:
+  &lt;select
+    class=&quot;w-full p-2 border rounded-md&quot;
+  /&gt;
+
+  --------------------------------------------------
+  option:
+
+  Name &quot;横向拼接&quot;:
+  &lt;option
+    value=&quot;horizontal&quot;
+  /&gt;
+
+  Name &quot;纵向拼接&quot;:
+  &lt;option
+    value=&quot;vertical&quot;
+  /&gt;
+
+  Name &quot;网格布局&quot;:
+  &lt;option
+    value=&quot;grid&quot;
+  /&gt;
+
+  --------------------------------------------------
+  slider:
+
+  Name &quot;&quot;:
+  &lt;input
+    class=&quot;w-full&quot;
+    max=&quot;50&quot;
+    min=&quot;0&quot;
+    type=&quot;range&quot;
+    value=&quot;10&quot;
+  /&gt;
+
+  --------------------------------------------------
+  button:
+
+  Name &quot;生成拼接图片&quot;:
+  &lt;button
+    class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+    data-testid=&quot;generate-btn&quot;
+    disabled=&quot;&quot;
+  /&gt;
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;div
+      class=&quot;container mx-auto p-4&quot;
+    &gt;
+      &lt;div
+        class=&quot;flex gap-6&quot;
+      &gt;
+        &lt;div
+          class=&quot;w-1/4 bg-gray-50 p-4 rounded-lg&quot;
+        &gt;
+          &lt;div
+            class=&quot;mb-6&quot;
+          &gt;
+            &lt;input
+              class=&quot;hidden&quot;
+              id=&quot;stitch-upload&quot;
+              multiple=&quot;&quot;
+              type=&quot;file&quot;
+            /&gt;
+            &lt;label
+              class=&quot;flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors&quot;
+              for=&quot;stitch-upload&quot;
+            &gt;
+              &lt;svg
+                class=&quot;lucide lucide-upload w-8 h-8 mb-2 text-gray-500&quot;
+                data-testid=&quot;upload-button&quot;
+                fill=&quot;none&quot;
+                height=&quot;24&quot;
+                stroke=&quot;currentColor&quot;
+                stroke-linecap=&quot;round&quot;
+                stroke-linejoin=&quot;round&quot;
+                stroke-width=&quot;2&quot;
+                viewBox=&quot;0 0 24 24&quot;
+                width=&quot;24&quot;
+                xmlns=&quot;http://www.w3.org/2000/svg&quot;
+              &gt;
+                &lt;path
+                  d=&quot;M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4&quot;
+                /&gt;
+                &lt;polyline
+                  points=&quot;17 8 12 3 7 8&quot;
+                /&gt;
+                &lt;line
+                  x1=&quot;12&quot;
+                  x2=&quot;12&quot;
+                  y1=&quot;3&quot;
+                  y2=&quot;15&quot;
+                /&gt;
+              &lt;/svg&gt;
+              &lt;span
+                class=&quot;text-sm&quot;
+              &gt;
+                点击上传图片
+              &lt;/span&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                支持多选
+              &lt;/span&gt;
+            &lt;/label&gt;
+          &lt;/div&gt;
+          &lt;div
+            class=&quot;space-y-4&quot;
+          &gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                布局模式
+              &lt;/label&gt;
+              &lt;select
+                class=&quot;w-full p-2 border rounded-md&quot;
+              &gt;
+                &lt;option
+                  value=&quot;horizontal&quot;
+                &gt;
+                  横向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;vertical&quot;
+                &gt;
+                  纵向拼接
+                &lt;/option&gt;
+                &lt;option
+                  value=&quot;grid&quot;
+                &gt;
+                  网格布局
+                &lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+              &lt;label
+                class=&quot;block text-sm font-medium mb-2&quot;
+              &gt;
+                图片间距
+              &lt;/label&gt;
+              &lt;input
+                class=&quot;w-full&quot;
+                max=&quot;50&quot;
+                min=&quot;0&quot;
+                type=&quot;range&quot;
+                value=&quot;10&quot;
+              /&gt;
+              &lt;span
+                class=&quot;text-xs text-gray-500&quot;
+              &gt;
+                10
+                px
+              &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;button
+              class=&quot;w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors&quot;
+              data-testid=&quot;generate-btn&quot;
+              disabled=&quot;&quot;
+            &gt;
+              生成拼接图片
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div
+          class=&quot;flex-1 bg-white p-4 rounded-lg border&quot;
+        &gt;
+          &lt;div
+            class=&quot;relativ
+          e bg-gray-100 rounded-lg overflow-hidden&quot;
+            style=&quot;width: 100%; height: 600px; background-color: rgb(255, 255, 255);&quot;
+          /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.0/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/unit/pages/image/collage/page.test.tsx:207:35
             </failure>
         </testcase>
     </testsuite>

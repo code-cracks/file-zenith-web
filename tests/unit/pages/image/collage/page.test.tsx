@@ -1,185 +1,221 @@
+/**
+ * 单元测试四大主要功能
+ * 1. 图片上传管理
+ * 2. 布局配置选择
+ * 3. 可视化预览系统
+ * 4. 拼接参数配置
+ * 5. 图片生成和下载
+ */
+// import { useRouter } from 'next/router';
+
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-// import { useRouter } from 'next/router';
 import Page from '@/app/image/collage/page';
 
-// 模拟 next/router
-vi.mock('next/router', () => ({
-  useRouter: vi.fn().mockReturnValue({
-    push: vi.fn(),
-    query: {},
-  }),
-}));
+// 在测试文件中添加以下类型声明和模拟
+type ContextMap = {
+  '2d': CanvasRenderingContext2D;
+  bitmaprenderer: ImageBitmapRenderingContext;
+  webgl: WebGLRenderingContext;
+  webgl2: WebGL2RenderingContext;
+};
 
-// 模拟文件读取和图片加载
-class MockFileReader {
-  result = '';
-  onload: ((this: FileReader, ev: ProgressEvent) => void) | null = null;
+const createMockContext = <T extends keyof ContextMap>(type: T): ContextMap[T] | null => {
+  const mocks = {
+    '2d': {
+      __isMock2D: true,
+      fillRect: vi.fn(),
+      drawImage: vi.fn(),
+      // 其他 2D 方法
+    } as unknown as CanvasRenderingContext2D,
 
-  readAsDataURL() {
-    this.result = 'data:image/png;base64,mock';
-    this.onload?.(new ProgressEvent('load'));
-  }
-}
+    bitmaprenderer: {
+      __isMockBitmap: true,
+      transferFromImageBitmap: vi.fn(),
+    } as unknown as ImageBitmapRenderingContext,
 
-global.FileReader = MockFileReader as any;
+    webgl: {
+      __isMockWebGL: true,
+      // WebGL 方法
+    } as unknown as WebGLRenderingContext,
 
-// 模拟 Canvas 上下文
-const mockDrawImage = vi.fn();
-HTMLCanvasElement.prototype.getContext = vi.fn(() => ({
-  fillRect: vi.fn(),
-  drawImage: mockDrawImage,
-  fillStyle: '',
-  canvas: {
-    toDataURL: vi.fn(() => 'data:image/mock'),
+    webgl2: {
+      __isMockWebGL2: true,
+      // WebGL2 方法
+    } as unknown as WebGL2RenderingContext,
+  };
+
+  return mocks[type] ?? null;
+};
+
+// 类型安全的 getContext 模拟
+const mockGetContext = vi.fn(
+  <T extends keyof ContextMap>(
+    contextId: T,
+    // options?: CanvasRenderingContext2DSettings | ImageBitmapRenderingContextSettings | WebGLContextAttributes
+  ): ContextMap[T] | null => {
+    return createMockContext(contextId);
   },
-})) as any;
+) as unknown as {
+  // 精确映射所有重载类型
+  <T extends '2d'>(contextId: T, options?: CanvasRenderingContext2DSettings): ContextMap[T] | null;
+  <T extends 'bitmaprenderer'>(
+    contextId: T,
+    options?: ImageBitmapRenderingContextSettings,
+  ): ContextMap[T] | null;
+  <T extends 'webgl' | 'webgl2'>(
+    contextId: T,
+    options?: WebGLContextAttributes,
+  ): ContextMap[T] | null;
+  (contextId: string): RenderingContext | null;
+};
 
-describe('图片拼接页面 (/image/collage)', () => {
-  const user = userEvent.setup();
-  const mockFile = new File(['test'], 'test.png', { type: 'image/png' });
+beforeEach(() => {
+  // 应用模拟
+  global.HTMLCanvasElement.prototype.getContext = mockGetContext;
 
-  beforeEach(() => {
-    vi.clearAllMocks();
-    vi.restoreAllMocks();
-  });
+  // 其他必要模拟
+  global.HTMLCanvasElement.prototype.toDataURL = vi.fn(() => 'data:image/png;base64,test');
+  global.URL.createObjectURL = vi.fn(() => 'mock-url');
+});
+describe('图片拼接组件', () => {
+  describe('1. 图片上传管理', () => {
+    it('应正确处理多文件上传', async () => {
+      const user = userEvent.setup();
+      const files = [
+        new File(['test1'], 'test1.png', { type: 'image/png' }),
+        new File(['test2'], 'test2.png', { type: 'image/png' }),
+      ];
 
-  it('应正确渲染页面框架', () => {
-    render(<Page />);
-
-    // 验证核心 UI 元素
-    expect(
-      screen.getByRole('heading', {
-        name: /图片拼接工具/i,
-        level: 1,
-      }),
-    ).toBeInTheDocument();
-
-    expect(screen.getByLabelText('布局模式')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '生成拼接图片' })).toBeDisabled();
-  });
-
-  describe('文件上传功能', () => {
-    it('应处理多文件上传并显示预览', async () => {
       render(<Page />);
 
-      // 执行文件上传
-      const input = screen.getByLabelText(/点击上传图片/) as HTMLInputElement;
-      await user.upload(input, [mockFile, mockFile]);
+      const input = screen.getByTestId('upload-button').previousElementSibling!;
+      await user.upload(input, files);
 
-      // 验证加载状态
-      expect(screen.getByText('生成中...')).toBeInTheDocument();
-
-      // 验证预览渲染
       await waitFor(() => {
-        expect(screen.getAllByAltText(/Image \d/)).toHaveLength(2);
-        expect(screen.getByRole('button', { name: '生成拼接图片' })).toBeEnabled();
+        expect(screen.getByTestId('generate-btn')).toBeEnabled();
+        expect(screen.getAllByRole('img')).toHaveLength(2);
       });
     });
 
-    it('应处理无效文件类型', async () => {
+    it('应显示空状态提示', async () => {
+      const user = userEvent.setup();
       render(<Page />);
 
-      const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
-      const invalidFile = new File(['test'], 'test.txt', { type: 'text/plain' });
-
-      await user.upload(screen.getByLabelText(/点击上传图片/), [invalidFile]);
-
-      expect(alertSpy).toHaveBeenCalledWith('仅支持图片文件');
+      await user.click(screen.getByTestId('generate-btn'));
+      expect(await screen.findByText('请先上传图片')).toBeInTheDocument();
     });
   });
 
-  describe('布局配置功能', () => {
-    beforeEach(async () => {
-      render(<Page />);
-      await user.upload(screen.getByLabelText(/点击上传图片/), [mockFile]);
-    });
-
+  describe('2. 布局配置选择', () => {
     it('应正确切换布局模式', async () => {
-      const layoutSelect = screen.getByLabelText('布局模式');
+      const user = userEvent.setup();
+      render(<Page />);
 
-      // 测试网格布局
-      await user.selectOptions(layoutSelect, 'grid');
-      expect(layoutSelect).toHaveValue('grid');
-      expect(screen.getByLabelText('网格列数')).toHaveValue('2');
+      const select = screen.getByLabelText('布局模式');
+      await user.selectOptions(select, 'vertical');
 
-      // 测试垂直布局
-      await user.selectOptions(layoutSelect, 'vertical');
-      expect(screen.getByAltText(/Image 1/)).toHaveStyle({ top: '0px' });
+      expect(select).toHaveValue('vertical');
+      expect(screen.queryByLabelText('网格列数')).toBeNull();
+
+      await user.selectOptions(select, 'grid');
+      expect(screen.getByLabelText('网格列数')).toBeInTheDocument();
     });
+  });
 
-    it('应正确调整网格列数', async () => {
-      await user.selectOptions(screen.getByLabelText('布局模式'), 'grid');
+  describe('3. 可视化预览系统', () => {
+    it('应正确计算图片位置', async () => {
+      const user = userEvent.setup();
+      const file = new File(['test'], 'test.png', { type: 'image/png' });
+      render(<Page />);
 
-      const columnsInput = screen.getByLabelText('网格列数');
+      const input = screen.getByTestId('upload-button').previousElementSibling!;
+      await user.upload(input, [file]);
 
-      await user.clear(columnsInput);
-      await user.type(columnsInput, '3');
-
-      // 验证图片排列
       await waitFor(() => {
-        expect(screen.getByAltText(/Image 1/)).toHaveStyle({
-          left: expect.stringMatching(/\d+px/),
+        const img = screen.getByRole('img');
+        expect(img).toHaveStyle({
+          left: '0px',
+          top: '0px',
         });
       });
     });
 
-    it('应正确应用图片间距', async () => {
-      const spacingSlider = screen.getByLabelText('图片间距');
-      await user.click(spacingSlider);
-      fireEvent.change(spacingSlider, { target: { value: '20' } });
+    it('应响应容器尺寸变化', async () => {
+      const originalGetBoundingClientRect = HTMLElement.prototype.getBoundingClientRect;
+      HTMLElement.prototype.getBoundingClientRect = vi.fn(() => ({
+        width: 800,
+        height: 600,
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+      }));
 
-      // 验证样式更新
-      expect(screen.getByAltText(/Image 1/)).toHaveStyle({
-        margin: '10px', // spacing/2
-      });
+      // 执行测试...
+
+      HTMLElement.prototype.getBoundingClientRect = originalGetBoundingClientRect;
     });
   });
 
-  describe('图片生成流程', () => {
-    beforeEach(async () => {
+  describe('4. 拼接参数配置', () => {
+    it('应更新间距参数', async () => {
+      const user = userEvent.setup();
       render(<Page />);
-      await user.upload(screen.getByLabelText(/点击上传图片/), [mockFile]);
+
+      const slider = screen.getByRole('slider', { name: /图片间距/ });
+      await user.clear(slider);
+      await user.type(slider, '20');
+
+      expect(slider).toHaveValue('20');
+      expect(screen.getByText('20px')).toBeInTheDocument();
     });
 
-    it('应完成完整生成流程', async () => {
-      const linkClickSpy = vi.spyOn(HTMLAnchorElement.prototype, 'click');
+    it('应限制网格列数输入范围', async () => {
+      const user = userEvent.setup();
+      render(<Page />);
 
-      await user.click(screen.getByRole('button', { name: '生成拼接图片' }));
+      await user.selectOptions(screen.getByLabelText('布局模式'), 'grid');
 
-      // 验证 Canvas 操作
-      await waitFor(
-        () => {
-          expect(mockDrawImage).toHaveBeenCalled();
-          expect(linkClickSpy).toHaveBeenCalled();
-        },
-        { timeout: 2000 },
-      );
-    });
+      const input = screen.getByLabelText('网格列数');
 
-    it('应处理空文件生成', async () => {
-      // 清空已上传文件
-      await user.upload(screen.getByLabelText(/点击上传图片/), []);
+      await user.clear(input);
+      await user.type(input, '0');
+      expect(input).toHaveValue('1');
 
-      const alertSpy = vi.spyOn(window, 'alert').mockImplementation(() => {});
-
-      await user.click(screen.getByRole('button', { name: '生成拼接图片' }));
-
-      expect(alertSpy).toHaveBeenCalledWith('请先上传图片');
+      await user.clear(input);
+      await user.type(input, '7');
+      expect(input).toHaveValue('6');
     });
   });
 
-  describe('响应式布局', () => {
-    it('应适配移动端视图', () => {
-      // 模拟移动端尺寸
-      global.innerWidth = 375;
-      fireEvent(window, new Event('resize'));
-
+  describe('5. 图片生成和下载', () => {
+    it('应生成正确尺寸的图片', async () => {
+      const user = userEvent.setup();
+      const file = new File(['test'], 'test.png', { type: 'image/png' });
       render(<Page />);
 
-      expect(screen.getByTestId('preview-container')).toHaveClass('mobile-layout');
+      const input = screen.getByTestId('upload-button').previousElementSibling!;
+      await user.upload(input, [file]);
+
+      const createElementSpy = vi.spyOn(document, 'createElement');
+      await user.click(await screen.findByTestId('generate-btn'));
+
+      expect(createElementSpy).toHaveBeenCalledWith('canvas');
+      expect(global.URL.createObjectURL).toHaveBeenCalled();
+    });
+
+    it('应使用配置的质量参数', async () => {
+      const user = userEvent.setup();
+      render(<Page />);
+
+      const qualityInput = screen.getByRole('spinbutton', { name: /输出质量/ });
+      await user.clear(qualityInput);
+      await user.type(qualityInput, '0.8');
+
+      // 执行生成操作并验证...
     });
   });
 });

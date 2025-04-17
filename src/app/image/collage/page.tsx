@@ -63,6 +63,7 @@ let stitchedImages: StitchedImageData = {
   width: 0,
   height: 0,
 };
+
 // 图片拼接预览缩放比例
 let scaleX: number = 1;
 let scaleY: number = 1;
@@ -114,7 +115,6 @@ const ImageStitcher = () => {
     Promise.all(loaders).then((loadedImages) => {
       setImages((prev) => [...prev, ...loadedImages]);
       arrangeImages([...images, ...loadedImages]);
-      // setTimeout(() => arrangeImages(), 0);
       setIsProcessing(false);
     });
   };
@@ -132,12 +132,10 @@ const ImageStitcher = () => {
 
     const containerWidth = containerRef.current.offsetWidth;
     const containerHeight = containerRef.current.offsetHeight;
-    console.log(containerWidth, 'containerWidth');
 
     let x = 0,
       y = 0;
     let lastX: number = 0;
-    console.log(imgs, 'imgs');
 
     switch (settings.layout) {
       case 'horizontal':

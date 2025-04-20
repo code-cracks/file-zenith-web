@@ -80,14 +80,16 @@ const ImageStitcher = () => {
   const [containerSize, setContainerSize] = useState({ width: 800, height: 600 });
   const [isProcessing, setIsProcessing] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  console.log(containerSize, 'containerSize', setContainerSize);
+  console.log(containerSize, 'containerSize', setContainerSize, isProcessing, images.length);
 
   // 处理图片上传
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
+    console.log(files, 'files');
     if (!files.length) return;
-
+    console.log(files.length, 'files.length');
     setIsProcessing(true);
+    console.log(isProcessing, 'isProcessing', images.length);
 
     const loaders = files.map((file) => {
       return new Promise<ImageData>((resolve) => {
@@ -95,24 +97,29 @@ const ImageStitcher = () => {
 
         reader.onload = (e) => {
           const img = new Image();
+          console.log(e, 'e.target');
 
           img.onload = () => {
             resolve({
               id: Math.random().toString(36).substr(2, 9),
-              src: e.target!.result as string,
+              src: (e?.target!.result as string) || '',
               width: img.naturalWidth,
               height: img.naturalHeight,
             });
           };
 
-          img.src = e.target!.result as string;
+          img.src = e?.target!.result as string;
         };
 
         reader.readAsDataURL(file);
       });
     });
-
+    console.log(loaders, 'loaders');
+    loaders[0].then((img) => {
+      console.log(img, 'img');
+    });
     Promise.all(loaders).then((loadedImages) => {
+      console.log(loadedImages, 'loadedImages');
       setImages((prev) => [...prev, ...loadedImages]);
       arrangeImages([...images, ...loadedImages]);
       setIsProcessing(false);
@@ -128,6 +135,7 @@ const ImageStitcher = () => {
 
   // 自动排列图片
   const arrangeImages = (imgs: ImageData[]) => {
+    console.log(imgs, 'arrangeImages', settings.layout);
     if (!containerRef.current) return;
 
     const containerWidth = containerRef.current.offsetWidth;
@@ -314,12 +322,13 @@ const ImageStitcher = () => {
               onChange={handleImageUpload}
               className="hidden"
               id="stitch-upload"
+              data-testid="upload-button"
             />
             <label
               htmlFor="stitch-upload"
               className="flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors"
             >
-              <Upload data-testid="upload-button" className="w-8 h-8 mb-2 text-gray-500" />
+              <Upload className="w-8 h-8 mb-2 text-gray-500" />
               <span className="text-sm">点击上传图片</span>
               <span className="text-xs text-gray-500">支持多选</span>
             </label>
@@ -367,7 +376,6 @@ const ImageStitcher = () => {
               />
               <span className="text-xs text-gray-500">{settings.spacing}px</span>
             </div>
-
             <button
               data-testid="generate-btn"
               onClick={generateStitchedImage}
@@ -383,8 +391,7 @@ const ImageStitcher = () => {
         <div className="flex-1 bg-white p-4 rounded-lg border">
           <div
             ref={containerRef}
-            className="relativ
-          e bg-gray-100 rounded-lg overflow-hidden"
+            className="relative bg-gray-100 rounded-lg overflow-hidden"
             style={{
               width: '100%',
               height: '600px',

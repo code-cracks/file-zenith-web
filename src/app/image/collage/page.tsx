@@ -32,6 +32,7 @@ interface ImageData {
  * @property {string} backgroundColor - 背景颜色
  * @property {number} gridColumns - 网格列数
  * @property {number} outputQuality - 输出质量
+ * @property {boolean} autoAdjust - 是否自动调整图片大小
  */
 interface StitchSettings {
   layout: LayoutMode;
@@ -39,6 +40,7 @@ interface StitchSettings {
   backgroundColor: string;
   gridColumns: number;
   outputQuality: number;
+  autoAdjust: boolean;
 }
 
 // 拼接后图片数据类型
@@ -76,20 +78,16 @@ const ImageStitcher = () => {
     backgroundColor: '#FFFFFF',
     gridColumns: 2,
     outputQuality: 0.9,
+    autoAdjust: true,
   });
-  const [containerSize, setContainerSize] = useState({ width: 800, height: 600 });
   const [isProcessing, setIsProcessing] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  console.log(containerSize, 'containerSize', setContainerSize, isProcessing, images.length);
 
   // 处理图片上传
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    console.log(files, 'files');
     if (!files.length) return;
-    console.log(files.length, 'files.length');
     setIsProcessing(true);
-    console.log(isProcessing, 'isProcessing', images.length);
 
     const loaders = files.map((file) => {
       return new Promise<ImageData>((resolve) => {
@@ -114,13 +112,10 @@ const ImageStitcher = () => {
         reader.readAsDataURL(file);
       });
     });
-    console.log(loaders, 'loaders');
-    loaders[0].then((img) => {
-      console.log(img, 'img');
-    });
+
+    // 读取所有图片
     Promise.all(loaders).then((loadedImages) => {
-      console.log(loadedImages, 'loadedImages');
-      setImages((prev) => [...prev, ...loadedImages]);
+      // setImages((prev) => [...prev, ...loadedImages]);
       arrangeImages([...images, ...loadedImages]);
       setIsProcessing(false);
     });
@@ -136,6 +131,12 @@ const ImageStitcher = () => {
   // 自动排列图片
   const arrangeImages = (imgs: ImageData[]) => {
     console.log(imgs, 'arrangeImages', settings.layout);
+
+    if (settings.autoAdjust) {
+      const adjustedImages = adjustImageSize(imgs); // 先调整尺寸
+      imgs = adjustedImages; // 更新 imgs 为调整后的图片
+    }
+
     if (!containerRef.current) return;
 
     const containerWidth = containerRef.current.offsetWidth;
@@ -145,6 +146,7 @@ const ImageStitcher = () => {
       y = 0;
     let lastX: number = 0;
 
+    // 根据布局模式计算缩放比例
     switch (settings.layout) {
       case 'horizontal':
         let totalWidth =
@@ -302,12 +304,83 @@ const ImageStitcher = () => {
     setIsProcessing(false);
   };
 
+  // 加载图片
   const loadImage = (src: string): Promise<HTMLImageElement> => {
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => resolve(img);
       img.src = src;
     });
+  };
+
+  // 将图片根据布局模式进行大小的调整
+  // 1. 当横向排列就让图片宽度等于容器宽度/特定值，保持高度不变/特定值
+  // 2. 当纵向排列就让图片高度等于容器高度/特定值，保持宽度不变/特定值
+  // 3. 当网格排列就让图片宽度等于特定值/第一张图片宽高
+  const adjustImageSize = (imgs: ImageData[]): ImageData[] => {
+    if (!containerRef.current) return imgs;
+
+    const containerWidth = containerRef.current.offsetWidth;
+    const containerHeight = containerRef.current.offsetHeight;
+
+    switch (settings.layout) {
+      case 'horizontal': {
+        // 横向布局：等比例缩放图片高度到容器高度
+        const targetHeight = containerHeight - settings.spacing * 2;
+
+        return imgs.map((img) => {
+          const aspectRatio = img.width / img.height;
+
+          return {
+            ...img,
+            width: targetHeight * aspectRatio,
+            height: targetHeight,
+          };
+        });
+      }
+
+      case 'vertical': {
+        // 纵向布局：等比例缩放图片宽度到容器宽度
+        const targetWidth = containerWidth - settings.spacing * 2;
+
+        return imgs.map((img) => {
+          const aspectRatio = img.height / img.width;
+
+          return {
+            ...img,
+            width: targetWidth,
+            height: targetWidth * aspectRatio,
+          };
+        });
+      }
+
+      case 'grid': {
+        // 网格布局：等比例缩放图片宽度到网格单元格
+        // 使用第一张图片的尺寸作为基准
+        const baseWidth = imgs[0].width;
+        const baseHeight = imgs[0].height;
+
+        // 或使用特定值（例如300x300）
+        // const baseWidth = 300;
+        // const baseHeight = 300;
+
+        return imgs.map((img) => {
+          // 计算保持宽高比的缩放比例
+          const widthRatio = baseWidth / img.width;
+          const heightRatio = baseHeight / img.height;
+          const scale = Math.min(widthRatio, heightRatio);
+
+          return {
+            ...img,
+            width: img.width * scale,
+            height: img.height * scale,
+          };
+        });
+      }
+
+      default:
+        return imgs;
+    }
   };
 
   return (
@@ -375,7 +448,20 @@ const ImageStitcher = () => {
                 />
               </div>
             )}
-
+            {/* 自动调整开关 */}
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-medium">自动尺寸调整</span>
+              <button
+                onClick={() => setSettings((s) => ({ ...s, autoAdjust: !s.autoAdjust }))}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors 
+        ${settings.autoAdjust ? 'bg-blue-500' : 'bg-gray-300'}`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform 
+        ${settings.autoAdjust ? 'translate-x-6' : 'translate-x-1'}`}
+                />
+              </button>
+            </div>
             <div>
               <label className="block text-sm font-medium mb-2">图片间距</label>
               <input
@@ -400,13 +486,13 @@ const ImageStitcher = () => {
         </div>
 
         {/* 右侧预览区域 */}
-        <div className="flex-1 bg-white p-4 rounded-lg border">
+        <div className="flex-1 bg-white  rounded-lg border">
           <div
             ref={containerRef}
             className="relative bg-gray-100 rounded-lg overflow-hidden"
             style={{
               width: '100%',
-              height: '600px',
+              height: '1200px',
               backgroundColor: settings.backgroundColor,
             }}
           >
@@ -420,7 +506,6 @@ const ImageStitcher = () => {
                   top: (img.y ?? 0) * scaleY,
                   width: img.width * scaleX,
                   height: img.height * scaleY,
-                  margin: settings.spacing / 2,
                 }}
                 alt={`Image ${index + 1}`}
               />

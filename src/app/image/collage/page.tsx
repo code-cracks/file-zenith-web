@@ -336,24 +336,36 @@ const ImageStitcher = () => {
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium mb-2">布局模式</label>
+              <label htmlFor="layout-mode" className="block text-sm font-medium mb-2">
+                布局模式
+              </label>
               <select
                 value={settings.layout}
+                id="layout-mode"
                 onChange={(e) =>
                   setSettings((s) => ({ ...s, layout: e.target.value as LayoutMode }))
                 }
                 className="w-full p-2 border rounded-md"
               >
-                <option value="horizontal">横向拼接</option>
-                <option value="vertical">纵向拼接</option>
-                <option value="grid">网格布局</option>
+                <option value="horizontal" aria-labelledby="layout-mode">
+                  横向拼接
+                </option>
+                <option value="vertical" aria-labelledby="layout-mode">
+                  纵向拼接
+                </option>
+                <option value="grid" aria-labelledby="layout-mode">
+                  网格布局
+                </option>
               </select>
             </div>
 
             {settings.layout === 'grid' && (
               <div>
-                <label className="block text-sm font-medium mb-2">网格列数</label>
+                <label htmlFor="grid-columns" className="block text-sm font-medium mb-2">
+                  网格列数
+                </label>
                 <input
+                  id="grid-columns"
                   type="number"
                   value={settings.gridColumns}
                   onChange={(e) => setSettings((s) => ({ ...s, gridColumns: +e.target.value }))}

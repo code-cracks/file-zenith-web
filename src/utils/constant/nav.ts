@@ -25,7 +25,7 @@ export const tools: ToolCategory[] = [
       { title: '智能抠图', href: '/image/remove-bg' },
       { title: '证件照制作', href: '/image/id-photo' },
       { title: '水印处理', href: '/image/watermark' },
-
+      { title: '相机水印', href: '/image/camera-watermark' },
       // 创意编辑
       { title: '图片拼图', href: '/image/collage' },
       { title: '九宫格切图', href: '/image/grid-cut' },
@@ -41,10 +41,11 @@ export const tools: ToolCategory[] = [
     title: 'PDF工具',
     icon: FileOutput,
     children: [
-      { title: 'PDF转Word', href: '/pdf/to-word' },
-      { title: 'PDF转图片', href: '/pdf/to-image' },
-      { title: '拆分PDF', href: '/pdf/split' },
-      { title: '压缩PDF', href: '/pdf/compress' },
+      { title: 'PDF工具', href: '/pdf' },
+      // { title: 'PDF转Word', href: '/pdf/to-word' },
+      // { title: 'PDF转图片', href: '/pdf/to-image' },
+      // { title: '拆分PDF', href: '/pdf/split' },
+      // { title: '压缩PDF', href: '/pdf/compress' },
     ],
   },
   {

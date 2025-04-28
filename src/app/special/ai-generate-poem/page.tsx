@@ -156,7 +156,7 @@ export default function AIGeneratePoem() {
     <ConfigProvider theme={antdThemeConfig}>
       <div className="size-full relative">
         {contextHolder}
-        <div className="size-full absolute inset-0 z-[-1] bg-[url('@/assets/images/generate-poem/background.jpeg')] bg-no-repeat bg-cover dark:brightness-50"></div>
+        <div className="size-full absolute inset-0 z-[-1] bg-[url(@/assets/images/generate-poem/background.jpeg)] bg-no-repeat bg-cover dark:brightness-50"></div>
         <div className="container mx-auto py-8 px-4">
           <div className="w-full">
             {/* 页面标题与简介 */}

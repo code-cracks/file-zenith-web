@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useState, useMemo, createContext } from 'react';
+import { useState, useMemo, createContext, useRef } from 'react';
 import { ConfigProvider, message } from 'antd';
 
 import { RadioButton, RadioButtonOption } from './_components/RadioButton';
@@ -18,11 +18,11 @@ export const MessageContext = createContext<ReturnType<typeof message.useMessage
 
 export default function AIGeneratePoem() {
   const { theme } = useTheme();
-
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState(false);
   const [showPoster, setShowPoster] = useState(false);
   const [generatedPoem, setGeneratedPoem] = useState('');
+  const eventSourceRef = useRef<EventSource | null>(null);
   // 用户诗词格式配置数据
   const [configForm, setConfigForm] = useState<ConfigFormType>({
     keyword: '',
@@ -80,14 +80,14 @@ export default function AIGeneratePoem() {
     setLoading(true);
     setShowPoster(true);
 
-    const sseConnection = createSSEConnection(formDataToObject(formData));
-
-    // 组件卸载时自动关闭连接（在useEffect清理函数中）
-    return () => sseConnection.close();
+    createSSEConnection(formDataToObject(formData));
   };
 
   const createSSEConnection = (formData: Record<string, any>) => {
+    eventSourceRef.current?.close();
+
     const eventSource = new EventSource(`/api/generate-poem?${new URLSearchParams(formData)}`);
+    eventSourceRef.current = eventSource;
 
     eventSource.onmessage = (event) => {
       try {

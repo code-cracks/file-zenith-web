@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { useState, useMemo, createContext, useRef } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import { ConfigProvider, message } from 'antd';
 
 import { RadioButton, RadioButtonOption } from './_components/RadioButton';
@@ -14,11 +14,10 @@ import {
   type ConfigFormType,
 } from '@/app/constant/special/ai-generate-poem';
 
-export const MessageContext = createContext<ReturnType<typeof message.useMessage>[0] | null>(null);
-
 export default function AIGeneratePoem() {
   const { theme } = useTheme();
-  const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage()!;
+
   const [loading, setLoading] = useState(false);
   const [showPoster, setShowPoster] = useState(false);
   const [generatedPoem, setGeneratedPoem] = useState('');
@@ -156,7 +155,7 @@ export default function AIGeneratePoem() {
     <ConfigProvider theme={antdThemeConfig}>
       <div className="size-full relative">
         {contextHolder}
-        <div className="size-full absolute inset-0 z-[-1] bg-[url(@/assets/images/generate-poem/background.jpeg)] bg-no-repeat bg-cover dark:brightness-50"></div>
+        <div className="size-full absolute inset-0 z-[-1] bg-[url(/ai-generate-poem/background.jpeg)] bg-no-repeat bg-cover dark:brightness-50"></div>
         <div className="container mx-auto py-8 px-4">
           <div className="w-full">
             {/* 页面标题与简介 */}
@@ -306,16 +305,15 @@ export default function AIGeneratePoem() {
                 </div>
               </form>
               {/* 诗歌展示区域 */}
-              <MessageContext.Provider value={messageApi}>
-                {showPoster && (
-                  <PoemPoster
-                    poem={generatedPoem}
-                    recipient={configForm.recipient}
-                    author={configForm.author}
-                    keyword={configForm.keyword}
-                  />
-                )}
-              </MessageContext.Provider>
+              {showPoster && (
+                <PoemPoster
+                  poem={generatedPoem}
+                  recipient={configForm.recipient}
+                  author={configForm.author}
+                  keyword={configForm.keyword}
+                  messageApi={messageApi}
+                />
+              )}
             </div>
           </div>
         </div>

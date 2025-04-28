@@ -1,12 +1,12 @@
-import { useRef, useState, useEffect, use } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { ColorPicker, InputNumber, Upload, type UploadProps, type UploadFile } from 'antd';
 import type { RcFile } from 'antd/es/upload';
 import ImgCrop from 'antd-img-crop';
 import { CopyOutlined, DownloadOutlined, CloseCircleFilled } from '@ant-design/icons';
 import html2canvas from 'html2canvas-pro';
+import { MessageInstance } from 'antd/es/message/interface';
 
 import { RadioButton, RadioButtonOption } from './RadioButton';
-import { MessageContext } from '../page';
 
 import {
   poemBackgroundTypesMap,
@@ -18,10 +18,16 @@ interface PoemPosterProps {
   author?: string;
   recipient?: string;
   keyword?: string;
+  messageApi: MessageInstance;
 }
 
-export default function PoemPoster({ poem, author, recipient, keyword }: PoemPosterProps) {
-  const messageApi = use(MessageContext);
+export default function PoemPoster({
+  poem,
+  author,
+  recipient,
+  keyword,
+  messageApi,
+}: PoemPosterProps) {
   const posterRef = useRef<HTMLDivElement>(null);
   const posterBoardRef = useRef<HTMLDivElement>(null);
   const uploadedBackgroundImage = useRef(new Map());

@@ -1,4 +1,4 @@
-import { FileImage, FileOutput, Video, Film } from 'lucide-react';
+import { FileImage, FileOutput, Video, Film, Puzzle } from 'lucide-react';
 
 export interface ToolItem {
   title: string;
@@ -64,5 +64,10 @@ export const tools: ToolCategory[] = [
       { title: 'GIF压缩', href: '/gif/compress' },
       { title: 'GIF剪辑', href: '/gif/trim' },
     ],
+  },
+  {
+    title: '特色功能',
+    icon: Puzzle,
+    children: [{ title: 'AI写诗', href: '/special/ai-generate-poem' }],
   },
 ];

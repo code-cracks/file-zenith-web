@@ -384,10 +384,10 @@ const ImageStitcher = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 dark:bg-gray-900 min-h-screen">
       <div className="flex gap-6">
         {/* 左侧操作面板 */}
-        <div className="w-1/4 bg-gray-50 p-4 rounded-lg">
+        <div className="w-1/4 bg-gray-50 p-4 rounded-lg dark:bg-gray-800 dark:text-gray-100">
           <div className="mb-6">
             <input
               type="file"
@@ -399,17 +399,20 @@ const ImageStitcher = () => {
             />
             <label
               htmlFor="stitch-upload"
-              className="flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors"
+              className="flex flex-col items-center p-4 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors dark:border-gray-600 dark:hover:border-blue-600"
             >
-              <Upload className="w-8 h-8 mb-2 text-gray-500" />
-              <span className="text-sm">点击上传图片</span>
-              <span className="text-xs text-gray-500">支持多选</span>
+              <Upload className="w-8 h-8 mb-2 text-gray-500 dark:text-gray-300" />
+              <span className="text-sm dark:text-gray-300">点击上传图片</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">支持多选</span>
             </label>
           </div>
 
           <div className="space-y-4">
             <div>
-              <label htmlFor="layout-mode" className="block text-sm font-medium mb-2">
+              <label
+                htmlFor="layout-mode"
+                className="block text-sm font-medium mb-2 dark:text-gray-300"
+              >
                 布局模式
               </label>
               <select
@@ -418,15 +421,27 @@ const ImageStitcher = () => {
                 onChange={(e) =>
                   setSettings((s) => ({ ...s, layout: e.target.value as LayoutMode }))
                 }
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border rounded-md dark:border-gray-600 dark:text-white"
               >
-                <option value="horizontal" aria-labelledby="layout-mode">
+                <option
+                  value="horizontal"
+                  aria-labelledby="layout-mode"
+                  className="dark:bg-gray-700 dark:text-white"
+                >
                   横向拼接
                 </option>
-                <option value="vertical" aria-labelledby="layout-mode">
+                <option
+                  value="vertical"
+                  aria-labelledby="layout-mode"
+                  className="dark:bg-gray-700 dark:text-white"
+                >
                   纵向拼接
                 </option>
-                <option value="grid" aria-labelledby="layout-mode">
+                <option
+                  value="grid"
+                  aria-labelledby="layout-mode"
+                  className="dark:bg-gray-700 dark:text-white"
+                >
                   网格布局
                 </option>
               </select>
@@ -442,7 +457,7 @@ const ImageStitcher = () => {
                   type="number"
                   value={settings.gridColumns}
                   onChange={(e) => setSettings((s) => ({ ...s, gridColumns: +e.target.value }))}
-                  className="w-full p-2 border rounded-md"
+                  className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                   min="1"
                   max="6"
                 />
@@ -450,11 +465,11 @@ const ImageStitcher = () => {
             )}
             {/* 自动调整开关 */}
             <div className="flex items-center justify-between">
-              <span className="text-sm font-medium">自动尺寸调整</span>
+              <span className="text-sm font-medium dark:text-gray-300">自动尺寸调整</span>
               <button
                 onClick={() => setSettings((s) => ({ ...s, autoAdjust: !s.autoAdjust }))}
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors 
-        ${settings.autoAdjust ? 'bg-blue-500' : 'bg-gray-300'}`}
+                ${settings.autoAdjust ? 'bg-blue-500 dark:bg-blue-600' : 'bg-gray-300 dark:bg-gray-600'}`}
               >
                 <span
                   className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform 
@@ -463,22 +478,22 @@ const ImageStitcher = () => {
               </button>
             </div>
             <div>
-              <label className="block text-sm font-medium mb-2">图片间距</label>
+              <label className="block text-sm font-medium mb-2 dark:text-gray-300">图片间距</label>
               <input
                 type="range"
                 value={settings.spacing}
                 onChange={(e) => setSettings((s) => ({ ...s, spacing: +e.target.value }))}
                 min="0"
                 max="50"
-                className="w-full"
+                className="w-full dark:accent-blue-500"
               />
-              <span className="text-xs text-gray-500">{settings.spacing}px</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">{settings.spacing}px</span>
             </div>
             <button
               data-testid="generate-btn"
               onClick={generateStitchedImage}
               disabled={isProcessing || !images.length}
-              className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors"
+              className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 disabled:bg-gray-400 transition-colors  dark:bg-blue-600 dark:hover:bg-blue-700 dark:disabled:bg-gray-700"
             >
               {isProcessing ? '生成中...' : '生成拼接图片'}
             </button>
@@ -486,21 +501,20 @@ const ImageStitcher = () => {
         </div>
 
         {/* 右侧预览区域 */}
-        <div className="flex-1 bg-white  rounded-lg border">
+        <div className="flex-1 bg-white  rounded-lg border dark:bg-gray-900 dark:border-gray-700">
           <div
             ref={containerRef}
-            className="relative bg-gray-100 rounded-lg overflow-hidden"
+            className="relative bg-gray-100 rounded-lg overflow-hidden dark:bg-gray-800"
             style={{
               width: '100%',
               height: '1200px',
-              backgroundColor: settings.backgroundColor,
             }}
           >
             {images.map((img, index) => (
               <img
                 key={img.id}
                 src={img.src}
-                className="absolute object-contain shadow-lg"
+                className="absolute object-contain shadow-lg dark:shadow-gray-800/50"
                 style={{
                   left: (img.x ?? 0) * scaleX,
                   top: (img.y ?? 0) * scaleY,

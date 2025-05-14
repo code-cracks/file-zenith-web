@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="3" failures="0" errors="0" time="0.4824453">
+    <testsuite name="tests/unit/pages/image/collage/page.test.tsx" timestamp="2025-04-23T12:24:49.674Z" hostname="DESKTOP-Q8HVV4F" tests="3" failures="0" errors="0" skipped="0" time="0.4824453">
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 1. 图片上传管理 &gt; 应正确处理多文件上传" time="0.2591145">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m0[39m
+
+[ File {}, File {} ] files
+[33m2[39m files.length
+[33mfalse[39m isProcessing [33m0[39m
+[90mundefined[39m e.target
+[90mundefined[39m e.target
+[ Promise { [36m&lt;pending&gt;[39m }, Promise { [36m&lt;pending&gt;[39m } ] loaders
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mtrue[39m [33m0[39m
+
+{ id: [32m&apos;lm5iwu1av&apos;[39m, src: [32m&apos;&apos;[39m, width: [33m100[39m, height: [33m100[39m } img
+
+[
+  { id: [32m&apos;lm5iwu1av&apos;[39m, src: [32m&apos;&apos;[39m, width: [33m100[39m, height: [33m100[39m },
+  { id: [32m&apos;bn58485er&apos;[39m, src: [32m&apos;&apos;[39m, width: [33m100[39m, height: [33m100[39m }
+] loadedImages
+[
+  { id: [32m&apos;lm5iwu1av&apos;[39m, src: [32m&apos;&apos;[39m, width: [33m100[39m, height: [33m100[39m },
+  { id: [32m&apos;bn58485er&apos;[39m, src: [32m&apos;&apos;[39m, width: [33m100[39m, height: [33m100[39m }
+] arrangeImages horizontal
+
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m2[39m
+
+等待按钮可用
+
+            </system-out>
+            <system-err>
+An empty string (&quot;&quot;) was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+An empty string (&quot;&quot;) was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+
+            </system-err>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 1. 图片上传管理 &gt; 无图片生成按钮为空" time="0.0631703">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m0[39m
+
+            </system-out>
+        </testcase>
+        <testcase classname="tests/unit/pages/image/collage/page.test.tsx" name="图片拼接组件 &gt; 2. 布局配置选择 &gt; 应正确切换布局模式" time="0.1521317">
+            <system-out>
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m0[39m
+
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m0[39m
+
+{ width: [33m800[39m, height: [33m600[39m } containerSize [36m[Function: bound dispatchSetState][39m [33mfalse[39m [33m0[39m
+
+            </system-out>
+        </testcase>
+    </testsuite>
+</testsuites>

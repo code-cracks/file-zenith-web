@@ -108,12 +108,12 @@ const IDPhotoPage = () => {
 
             const processedUrl = URL.createObjectURL(processedBlob);
 
-            // 2. 创建处理后的图片对象
+            // 创建处理后的图片对象
             const img = new Image();
             img.src = processedUrl;
             await new Promise((resolve) => (img.onload = resolve));
 
-            // 3. 创建画布并设置尺寸
+            //  创建画布并设置尺寸
             const canvas = document.createElement('canvas');
             const dpi = 300; // 标准证件照分辨率
             const mmToInch = 25.4;
@@ -122,19 +122,19 @@ const IDPhotoPage = () => {
 
             const ctx = canvas.getContext('2d')!;
 
-            // 4. 先填充背景色
+            //  先填充背景色
             ctx.fillStyle = selectedColor.color;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // 5. 计算图片缩放和位置
-            const scale = Math.min(canvas.width / img.width, canvas.height / img.height);
+            // 计算图片缩放和位置
+            const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
             const x = (canvas.width - img.width * scale) / 2;
             const y = (canvas.height - img.height * scale) / 2;
 
-            // 6. 绘制处理后的透明背景图片
+            // 绘制处理后的透明背景图片
             ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
 
-            // 7. 转换为目标格式
+            // 转换为目标格式
             const format = SUPPORTED_FORMATS.find((f) => f.name === 'PNG')!; // 默认使用PNG保持透明度
             const blob = await new Promise<Blob | null>((resolve) =>
               canvas.toBlob(resolve, format.mimeType),
